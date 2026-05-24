@@ -39,9 +39,11 @@ GitHub renders the map as a single image, so the links below provide direct acce
 | Cardiac | [EchoNet-Dynamic](https://echonet.github.io/dynamic/) · [EchoNet-Pediatric](https://echonet.github.io/pediatric/) · [CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/) |
 | Fetal / OB | [Fetal Planes DB](https://zenodo.org/record/3904280) · [HC18](https://zenodo.org/records/1327317) · [Sonomate / PULSE gap](https://www.nature.com/articles/s41551-025-01578-3) |
 | Breast | [BUS-UCLM](https://github.com/noeliavallez/BUS-UCLM-Dataset) · [BUSI](https://scholar.cu.edu.eg/?q=afahmy/pages/dataset) · [OASBUD](https://zenodo.org/record/545928) |
-| Thyroid | [TN-SCUI2020](https://tn-scui2020.grand-challenge.org/) · [TN3K](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation) |
+| Thyroid | [TN3K](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation) |
 | POCUS | [COVID-BLUES](https://huggingface.co/datasets/jannisborn/COVID-BLUES) · [COVID-19 POCUS](https://github.com/jannisborn/covid19_ultrasound) · [Nerve Segmentation](https://www.kaggle.com/c/ultrasound-nerve-segmentation) |
-| General US VLM / imaging | [U2-BENCH](https://huggingface.co/datasets/DolphinAI/u2-bench) · [PICMUS](https://www.creatis.insa-lyon.fr/Challenge/IEEE_IUS_2016/) |
+| General US VLM | [U2-BENCH](https://huggingface.co/datasets/DolphinAI/u2-bench) |
+
+**Imaging research note.** PICMUS is kept in `data/datasets.csv` as an ultrasound imaging research resource, but it is not shown in the clinical HAIC map above. PICMUS is a plane-wave ultrasound imaging challenge built around raw pre-beamformed channel data for beamforming and image reconstruction, rather than a clinical diagnosis, reporting, or interaction dataset.
 
 ## Starter View
 
