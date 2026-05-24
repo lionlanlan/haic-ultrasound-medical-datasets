@@ -98,51 +98,83 @@
   </g>
 
   <!-- Non-public model-driven gap -->
-  <rect x="454" y="181" width="112" height="26" class="gap"/>
-  <text x="510" y="199" text-anchor="middle" class="gap-text">Sonomate / PULSE</text>
+  <a href="https://www.nature.com/articles/s41551-025-01578-3" target="_blank">
+    <rect x="454" y="181" width="112" height="26" class="gap"/>
+    <text x="510" y="199" text-anchor="middle" class="gap-text">Sonomate / PULSE</text>
+  </a>
 
   <!-- Ready resources only -->
   <!-- Cardiac -->
-  <rect x="306" y="448" width="128" height="26" fill="#b9d7ff" class="chip"/>
-  <text x="370" y="466" text-anchor="middle" class="chip-text">EchoNet-Dynamic</text>
-  <rect x="306" y="481" width="128" height="26" fill="#b9d7ff" class="chip"/>
-  <text x="370" y="499" text-anchor="middle" class="chip-text">EchoNet-Pediatric</text>
-  <rect x="326" y="548" width="88" height="26" fill="#b9d7ff" class="chip"/>
-  <text x="370" y="566" text-anchor="middle" class="chip-text">CAMUS</text>
+  <a href="https://echonet.github.io/dynamic/" target="_blank">
+    <rect x="306" y="448" width="128" height="26" fill="#b9d7ff" class="chip"/>
+    <text x="370" y="466" text-anchor="middle" class="chip-text">EchoNet-Dynamic</text>
+  </a>
+  <a href="https://echonet.github.io/pediatric/" target="_blank">
+    <rect x="306" y="481" width="128" height="26" fill="#b9d7ff" class="chip"/>
+    <text x="370" y="499" text-anchor="middle" class="chip-text">EchoNet-Pediatric</text>
+  </a>
+  <a href="https://www.creatis.insa-lyon.fr/Challenge/camus/" target="_blank">
+    <rect x="326" y="548" width="88" height="26" fill="#b9d7ff" class="chip"/>
+    <text x="370" y="566" text-anchor="middle" class="chip-text">CAMUS</text>
+  </a>
 
   <!-- Fetal -->
-  <rect x="446" y="272" width="128" height="26" fill="#9ce8d4" class="chip"/>
-  <text x="510" y="290" text-anchor="middle" class="chip-text">Fetal Planes DB</text>
-  <rect x="472" y="448" width="76" height="26" fill="#9ce8d4" class="chip"/>
-  <text x="510" y="466" text-anchor="middle" class="chip-text">HC18</text>
+  <a href="https://zenodo.org/record/3904280" target="_blank">
+    <rect x="446" y="272" width="128" height="26" fill="#9ce8d4" class="chip"/>
+    <text x="510" y="290" text-anchor="middle" class="chip-text">Fetal Planes DB</text>
+  </a>
+  <a href="https://zenodo.org/records/1327317" target="_blank">
+    <rect x="472" y="448" width="76" height="26" fill="#9ce8d4" class="chip"/>
+    <text x="510" y="466" text-anchor="middle" class="chip-text">HC18</text>
+  </a>
 
   <!-- Breast -->
-  <rect x="594" y="448" width="112" height="26" fill="#e9a3b7" class="chip"/>
-  <text x="650" y="466" text-anchor="middle" class="chip-text">BUS-UCLM</text>
-  <rect x="608" y="548" width="84" height="26" fill="#e9a3b7" class="chip"/>
-  <text x="650" y="566" text-anchor="middle" class="chip-text">BUSI</text>
-  <rect x="601" y="581" width="98" height="26" fill="#e9a3b7" class="chip"/>
-  <text x="650" y="599" text-anchor="middle" class="chip-text">OASBUD</text>
+  <a href="https://github.com/noeliavallez/BUS-UCLM-Dataset" target="_blank">
+    <rect x="594" y="448" width="112" height="26" fill="#e9a3b7" class="chip"/>
+    <text x="650" y="466" text-anchor="middle" class="chip-text">BUS-UCLM</text>
+  </a>
+  <a href="https://scholar.cu.edu.eg/?q=afahmy/pages/dataset" target="_blank">
+    <rect x="608" y="548" width="84" height="26" fill="#e9a3b7" class="chip"/>
+    <text x="650" y="566" text-anchor="middle" class="chip-text">BUSI</text>
+  </a>
+  <a href="https://zenodo.org/record/545928" target="_blank">
+    <rect x="601" y="581" width="98" height="26" fill="#e9a3b7" class="chip"/>
+    <text x="650" y="599" text-anchor="middle" class="chip-text">OASBUD</text>
+  </a>
 
   <!-- Thyroid -->
-  <rect x="728" y="448" width="124" height="26" fill="#c8b2f1" class="chip"/>
-  <text x="790" y="466" text-anchor="middle" class="chip-text">TN-SCUI2020</text>
-  <rect x="750" y="481" width="80" height="26" fill="#c8b2f1" class="chip"/>
-  <text x="790" y="499" text-anchor="middle" class="chip-text">TN3K</text>
+  <a href="https://tn-scui2020.grand-challenge.org/" target="_blank">
+    <rect x="728" y="448" width="124" height="26" fill="#c8b2f1" class="chip"/>
+    <text x="790" y="466" text-anchor="middle" class="chip-text">TN-SCUI2020</text>
+  </a>
+  <a href="https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation" target="_blank">
+    <rect x="750" y="481" width="80" height="26" fill="#c8b2f1" class="chip"/>
+    <text x="790" y="499" text-anchor="middle" class="chip-text">TN3K</text>
+  </a>
 
   <!-- POCUS -->
-  <rect x="874" y="272" width="112" height="26" fill="#ffd083" class="chip"/>
-  <text x="930" y="290" text-anchor="middle" class="chip-text">COVID-BLUES</text>
-  <rect x="862" y="362" width="136" height="26" fill="#ffd083" class="chip"/>
-  <text x="930" y="380" text-anchor="middle" class="chip-text">COVID-19 POCUS</text>
-  <rect x="854" y="548" width="152" height="26" fill="#ffd083" class="chip"/>
-  <text x="930" y="566" text-anchor="middle" class="chip-text">Nerve Segmentation</text>
+  <a href="https://huggingface.co/datasets/jannisborn/COVID-BLUES" target="_blank">
+    <rect x="874" y="272" width="112" height="26" fill="#ffd083" class="chip"/>
+    <text x="930" y="290" text-anchor="middle" class="chip-text">COVID-BLUES</text>
+  </a>
+  <a href="https://github.com/jannisborn/covid19_ultrasound" target="_blank">
+    <rect x="862" y="362" width="136" height="26" fill="#ffd083" class="chip"/>
+    <text x="930" y="380" text-anchor="middle" class="chip-text">COVID-19 POCUS</text>
+  </a>
+  <a href="https://www.kaggle.com/c/ultrasound-nerve-segmentation" target="_blank">
+    <rect x="854" y="548" width="152" height="26" fill="#ffd083" class="chip"/>
+    <text x="930" y="566" text-anchor="middle" class="chip-text">Nerve Segmentation</text>
+  </a>
 
   <!-- General -->
-  <rect x="1018" y="362" width="104" height="26" fill="#9edce2" class="chip"/>
-  <text x="1070" y="380" text-anchor="middle" class="chip-text">U2-BENCH</text>
-  <rect x="1030" y="548" width="80" height="26" fill="#b8c9d6" class="chip"/>
-  <text x="1070" y="566" text-anchor="middle" class="chip-text">PICMUS</text>
+  <a href="https://huggingface.co/datasets/DolphinAI/u2-bench" target="_blank">
+    <rect x="1018" y="362" width="104" height="26" fill="#9edce2" class="chip"/>
+    <text x="1070" y="380" text-anchor="middle" class="chip-text">U2-BENCH</text>
+  </a>
+  <a href="https://www.creatis.insa-lyon.fr/Challenge/IEEE_IUS_2016/" target="_blank">
+    <rect x="1030" y="548" width="80" height="26" fill="#b8c9d6" class="chip"/>
+    <text x="1070" y="566" text-anchor="middle" class="chip-text">PICMUS</text>
+  </a>
 
   <!-- Legend and interpretation -->
   <g transform="translate(38 636)">
