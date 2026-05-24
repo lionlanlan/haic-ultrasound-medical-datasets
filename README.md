@@ -26,6 +26,10 @@ The structured source of truth is [`data/datasets.csv`](data/datasets.csv). It i
 - HAIC relevance;
 - limitations for ultrasound human-AI collaboration.
 
+## Dataset Map
+
+![HAIC-oriented map of public ultrasound dataset resources](figures/haic_dataset_map.svg)
+
 ## Starter View
 
 | Dataset | Ultrasound area | Public source | Paper/source | Beginner use | HAIC relevance |
