@@ -30,6 +30,8 @@ The structured source of truth is [`data/datasets.csv`](data/datasets.csv). It i
 
 ![HAIC-oriented map of public ultrasound dataset resources](figures/haic_dataset_map.svg)
 
+The yellow **Sonomate / PULSE** marker is not listed as a public dataset. It highlights an important non-public data pattern: Sonomate was trained mainly on PULSE, a fetal ultrasound video-audio dataset that captures sonographer speech and scan-time context. We place it in the highest interaction-signal row because it shows the kind of temporally grounded human experience that future public HAIC datasets should capture, even though the dataset itself is not openly available.
+
 ## Starter View
 
 | Dataset | Ultrasound area | Public source | Paper/source | Beginner use | HAIC relevance |
