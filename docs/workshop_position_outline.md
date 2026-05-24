@@ -2,11 +2,11 @@
 
 ## Working Title
 
-Mapping Public Dataset Resources for Human-AI Collaboration in Medical Imaging: A Starting Point Toward Collaborative Ultrasound AI
+Public Ultrasound Medical Dataset Resources for Human-AI Collaboration: A Starting Point Toward Collaborative Ultrasound AI
 
 ## Core Claim
 
-Public medical AI datasets are usually organized by modality and task, but HAIC research needs a different view: whether a dataset contains human judgment, attention, workflow, skill, or interaction signals that make human-AI collaboration measurable.
+Public ultrasound datasets are usually organized by organ, modality, and model task, but HAIC research needs a different view: whether a dataset contains human judgment, measurements, annotations, workflow, skill, or interaction signals that make human-AI collaboration measurable.
 
 ## Link to the Ultrasound VLM Survey
 
@@ -21,9 +21,9 @@ However, most public ultrasound resources still lack the signals needed for HAIC
 
 ## Proposed Contributions for a 4-Page HAIC Paper
 
-1. A HAIC-oriented taxonomy of public medical datasets.
-2. A curated, maintainable resource list with access status and HAIC use cases.
-3. A starter guide connecting dataset types to research questions.
+1. A HAIC-oriented taxonomy of public ultrasound datasets.
+2. A curated, maintainable resource list with public source links, paper links, access status, and HAIC use cases.
+3. A starter guide connecting ultrasound dataset types to beginner-friendly research tasks.
 4. An ultrasound gap analysis motivating future collaborative ultrasound data collection.
 
 ## Suggested 4-Page Structure
@@ -31,7 +31,7 @@ However, most public ultrasound resources still lack the signals needed for HAIC
 ### Page 1: Motivation
 
 - HAIC asks different questions from conventional medical AI.
-- Many researchers know MIMIC-CXR, LIDC-IDRI, EchoNet-Dynamic, and surgical datasets, but there is no practical map showing which ones support HAIC.
+- Many researchers know individual ultrasound datasets such as EchoNet-Dynamic, CAMUS, BUSI, and fetal plane datasets, but there is no practical map showing which ones support HAIC.
 - Dataset suitability should be judged by human signals and workflow context, not only by modality and labels.
 
 ### Page 2: Taxonomy
@@ -50,10 +50,13 @@ Include a figure mapping datasets by HAIC signal:
 Use a compact representative table from `data/datasets.csv`, with columns:
 
 - dataset;
-- modality;
+- public source link;
+- paper or representative usage paper;
+- ultrasound area;
 - human signal;
+- beginner-friendly task;
 - HAIC use case;
-- access status;
+- access/license note;
 - limitation.
 
 ### Page 4: Ultrasound Case Study and Roadmap
@@ -78,4 +81,3 @@ Left: conventional dataset labels.
 Middle: HAIC signals.
 
 Right: research tasks such as complementarity, skill augmentation, interactive reporting, active learning, and robotic assistance.
-

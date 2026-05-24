@@ -1,84 +1,87 @@
-# Awesome HAIC Medical Datasets
+# Public Ultrasound Medical Datasets for HAIC Research
 
-A living list of public dataset resources for human-AI collaboration (HAIC) research in medical imaging, procedure analysis, and clinical skill augmentation.
+A curated, public dataset guide for ultrasound medical imaging and human-AI collaboration (HAIC) research.
 
-This repository is designed as a companion resource for workshop-style papers and early-stage HAIC projects. The goal is not to list every medical dataset, but to identify datasets that can support questions about human judgment, AI assistance, disagreement, workflow, explanation, skill, and interaction.
+This repository focuses on datasets that can help researchers in the ultrasound community quickly understand what public data exists, what each dataset can be used for, and what is still missing for collaborative ultrasound AI.
 
-## What Counts as HAIC-Relevant?
+## Scope
 
-We tag a dataset as HAIC-relevant when it contains, or can reasonably support the study of, at least one of the following signals:
+This list prioritizes:
 
-- **Human judgment**: multi-reader labels, disagreement, confidence, reports, diagnoses, or clinical measurements.
-- **Human attention**: gaze, bounding boxes, region references, localization, or explanation traces.
-- **Workflow context**: procedure phase, action, tool use, temporal sequence, or clinical process state.
-- **Skill signal**: operator expertise, gesture quality, scanning quality, or training feedback.
-- **Human-in-the-loop potential**: annotation refinement, active learning, AI-assisted reporting, triage, or collaborative decision-making.
-- **Embodied interaction**: robot action, probe motion, control trajectory, or language-to-action planning.
+- public or request-access ultrasound datasets;
+- datasets with official download pages, challenge pages, or stable repositories;
+- datasets with a paper, data descriptor, or representative high-impact usage paper;
+- resources that can support HAIC topics such as AI-assisted diagnosis, report generation, quality assessment, skill augmentation, measurement support, active learning, and human-in-the-loop evaluation.
 
-## Dataset Taxonomy
+General radiology, pathology, and surgery datasets are useful for HAIC methodology, but they are not the main focus of this repository. The main table is ultrasound-first.
 
-| Category | HAIC value | Representative resources |
-|---|---|---|
-| Multi-reader diagnostic datasets | Model human disagreement and complementarity | LIDC-IDRI, VinDr-CXR |
-| Image-report datasets | Study AI-assisted reporting and VLM grounding | MIMIC-CXR, PadChest |
-| Gaze and attention datasets | Align AI explanations with human visual search | REFLACX |
-| Ultrasound image/video datasets | Build ultrasound HAIC baselines and identify missing interaction signals | EchoNet-Dynamic, CAMUS, BUSI, Fetal Planes DB |
-| Procedure and skill datasets | Study clinical skill augmentation and workflow support | JIGSAWS, Cholec80, CholecT45, EndoVis |
-| VQA and instruction datasets | Evaluate multimodal assistants and reasoning | VQA-RAD, SLAKE, PathVQA |
-| Survey-derived ultrasound VLM benchmarks | Track emerging ultrasound-specific HAIC resources | U2-BENCH, FETAL-GAUGE, ReMUD, PRS-Med |
+## Main Dataset Table
 
-## Starter Table
+The structured source of truth is [`data/datasets.csv`](data/datasets.csv). It includes:
 
-The structured source of truth is [`data/datasets.csv`](data/datasets.csv). A compact starter view is below.
+- official dataset or source links;
+- paper or representative usage links;
+- access status and license notes;
+- beginner-friendly use cases;
+- HAIC relevance;
+- limitations for ultrasound human-AI collaboration.
 
-| Dataset | Modality | HAIC signal | Example HAIC use case | Status |
-|---|---|---|---|---|
-| MIMIC-CXR | Chest X-ray | Images and free-text reports | AI-assisted reporting, report-grounded explanation | Public, credentialed |
-| REFLACX | Chest X-ray | Eye gaze, reports, localization | Human attention modeling, gaze-aware explanation | Public, credentialed |
-| VinDr-CXR | Chest X-ray | Multi-radiologist annotations | Disagreement-aware diagnosis, complementarity | Public, credentialed |
-| LIDC-IDRI | Chest CT | Multi-reader contours and nodule ratings | Human disagreement, uncertainty-aware AI | Public |
-| EchoNet-Dynamic | Echocardiography video | Expert measurements and tracings | Measurement assistance, video-based echo support | Public application |
-| CAMUS | Echocardiography | Segmentation and cardiac measurements | Human-AI measurement workflow baseline | Public |
-| Fetal Planes DB | Fetal ultrasound | Standard-plane labels | Skill support for fetal view acquisition | Public |
-| HC18 | Fetal ultrasound | Head circumference annotation | Measurement assistance and quality control | Public challenge |
-| BUSI | Breast ultrasound | Lesion labels and masks | AI-assisted lesion localization baseline | Public |
-| OASBUD | Breast ultrasound | Lesion labels and outlines | Reader support and uncertainty studies | Public |
-| COVID-19 POCUS | Point-of-care ultrasound | Video clips and diagnostic labels | Triage support and operator training baseline | Public |
-| JIGSAWS | Surgical robotics | Gesture labels, kinematics, skill | Skill assessment, human-AI coaching | Public application |
-| Cholec80 | Laparoscopic video | Surgical phase labels | Workflow-aware AI assistance | Public request |
-| CholecT45 | Laparoscopic video | Tool-action-target triplets | Procedure understanding and action assistance | Public request |
-| EndoVis challenges | Endoscopic/surgical video | Tools, actions, anatomy | Intraoperative AI assistance | Public challenge |
-| VQA-RAD | Radiology VQA | Human question-answer pairs | Medical VLM reasoning and collaboration | Public |
-| SLAKE | Medical VQA | Questions, answers, knowledge | Knowledge-grounded VLM support | Public |
-| PathVQA | Pathology VQA | Image-question-answer pairs | Multimodal assistant evaluation | Public |
-| U2-BENCH | Ultrasound VLM benchmark | Ultrasound reasoning tasks | Ultrasound LVLM evaluation | Candidate, verify access |
-| FETAL-GAUGE | Fetal ultrasound benchmark | Fetal reasoning/evaluation | Fetal ultrasound assistant evaluation | Candidate, verify access |
-| ReMUD / HAIBU-ReMUD | Ultrasound reasoning dataset | Reasoning-oriented multimodal data | Ultrasound instruction tuning and reasoning | Candidate, verify access |
-| PRS-Med | Medical segmentation/reasoning | Position reasoning prompts | Human-style spatial reasoning for segmentation | Candidate, verify access |
+## Starter View
 
-## How to Use This List
+| Dataset | Ultrasound area | Public source | Paper/source | Beginner use | HAIC relevance |
+|---|---|---|---|---|---|
+| EchoNet-Dynamic | Echocardiography video | [Project](https://echonet.github.io/dynamic/) | [Nature 2020](https://www.nature.com/articles/s41586-020-2145-8) | Ejection fraction and measurement assistance | Video-based interpretation and measurement workflow |
+| CAMUS | Echocardiography | [Challenge](https://www.creatis.insa-lyon.fr/Challenge/camus/) | [arXiv](https://arxiv.org/abs/1908.06948) | Cardiac chamber segmentation | Human-AI measurement and contour correction |
+| Fetal Planes DB | Fetal ultrasound | [Zenodo](https://zenodo.org/record/3904280) | [Scientific Reports 2020](https://www.nature.com/articles/s41598-020-67076-5) | Standard-plane classification | Skill support for view acquisition |
+| HC18 | Fetal ultrasound | [Grand Challenge](https://hc18.grand-challenge.org/) | [Zenodo](https://zenodo.org/records/1322001) | Head circumference measurement | Measurement assistance and quality control |
+| BUSI | Breast ultrasound | [Dataset page](https://scholar.cu.edu.eg/?q=afahmy/pages/dataset) | [Data in Brief 2019](https://doi.org/10.1016/j.dib.2019.104863) | Lesion classification and segmentation | AI-assisted lesion localization |
+| OASBUD | Breast ultrasound | [Zenodo](https://zenodo.org/record/545928) | [Medical Physics](https://doi.org/10.1002/mp.12538) | Lesion analysis with RF data | Reader support and uncertainty studies |
+| BUS-UCLM | Breast ultrasound | [GitHub](https://github.com/noeliavallez/BUS-UCLM-Dataset) | [Scientific Data 2025](https://doi.org/10.1038/s41597-025-04562-3) | Lesion segmentation | Interactive boundary correction |
+| COVID-19 POCUS | Point-of-care ultrasound | [GitHub](https://github.com/jannisborn/covid19_pocus_ultrasound) | [NPJ Digital Medicine 2021](https://www.nature.com/articles/s41746-021-00475-z) | Video classification and triage | POCUS training and triage support |
+| DDTI | Thyroid ultrasound | [Dataset page](https://service.tib.eu/ldmservice/dataset/ddti-dataset) | [JMI 2015](https://doi.org/10.1117/1.JMI.2.1.014505) | Thyroid nodule classification and segmentation | Ultrasound reporting and localization baseline |
+| TN3K | Thyroid ultrasound | [Repository](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation) | [arXiv](https://arxiv.org/abs/2101.12386) | Thyroid nodule segmentation | Interactive segmentation and correction baseline |
+| U2-BENCH | Ultrasound VLM benchmark | Candidate to verify | Candidate to verify | LVLM evaluation | Ultrasound assistant evaluation |
 
-1. Start with the HAIC signal, not the modality.
-2. Choose datasets with explicit human traces when possible.
-3. Use conventional labels-only datasets as baselines, then explain what interaction information is missing.
-4. For ultrasound projects, separate diagnostic labels from acquisition skill, probe motion, view quality, and operator feedback.
-5. Record access constraints and licenses before designing a benchmark.
+## How New Researchers Can Use This List
 
-## Ultrasound Gap Map
+1. Choose a clinical ultrasound area: cardiac, fetal, breast, thyroid, abdominal, vascular, or POCUS.
+2. Start with datasets that have stable public links and clear papers.
+3. Match the dataset to a HAIC question:
+   - Can AI help a clinician measure more consistently?
+   - Can AI help a trainee acquire a better standard plane?
+   - Can AI explain where a lesion or anatomy is located?
+   - Can AI reduce disagreement or uncertainty?
+   - Can a human correct AI outputs efficiently?
+4. Check what human signal is available: labels, masks, measurements, reports, view quality, videos, multi-reader annotations, or workflow traces.
+5. Document what is missing before designing a new data collection protocol.
 
-Public ultrasound datasets are useful for quick starts, but most are not complete HAIC datasets. Common missing signals include:
+## Why This Matters for Ultrasound HAIC
+
+Most public ultrasound datasets are useful for model development but incomplete for HAIC. They often provide images, videos, labels, and masks, but rarely include:
 
 - probe trajectory and contact force;
-- operator gaze, speech, and scanning intention;
-- view-search process rather than only final selected frames;
+- operator gaze, speech, or intention;
 - trainee/expert skill labels;
+- view-search process before the final saved frame;
 - AI suggestion logs and human correction behavior;
-- uncertainty, disagreement, and confidence from multiple clinicians;
+- multi-clinician disagreement and confidence;
 - workflow context linking acquisition, diagnosis, reporting, and intervention.
 
-These gaps motivate prospective ultrasound HAIC data collection focused on collaborative scanning, skill augmentation, and human-AI decision-making.
+This gap motivates future ultrasound HAIC datasets that record both the medical images and the human-AI collaboration process.
 
 ## Contributing
 
-Please open an issue or pull request using the template in `.github/ISSUE_TEMPLATE/add_dataset.md`. New entries should include an official URL, access status, license notes, and at least one HAIC use case.
+Please open an issue or pull request using `.github/ISSUE_TEMPLATE/add_dataset.md`.
 
+Useful contributions include:
+
+- adding a public ultrasound dataset;
+- adding an official download link;
+- adding a paper or highly cited usage paper;
+- correcting license or access notes;
+- adding a HAIC use case;
+- explaining a limitation that new users should know.
+
+## License
+
+This dataset guide is released under [CC BY 4.0](LICENSE).
