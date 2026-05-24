@@ -47,7 +47,7 @@ The structured source of truth is [`data/datasets.csv`](data/datasets.csv). It i
 
 Many recent ultrasound foundation models are trained on institutional or newly collected private data. For new HAIC researchers, the most useful question is often: which public datasets can reproduce part of the evaluation, provide a baseline, or reveal what public data is still missing?
 
-| Model or benchmark | Ultrasound area | Public dataset connection | Reported performance signal | Takeaway for this list |
+| Model or benchmark | Ultrasound area | Public dataset connection | Reported performance signal | HAIC takeaway |
 |---|---|---|---|---|
 | EchoCLIP / EchoCLIP-R | Echocardiography | Uses public EchoNet-Dynamic for external validation, while large-scale pretraining data are institutional | Reports clinically useful zero-shot and retrieval performance for echo interpretation tasks | EchoNet-Dynamic is a key public cardiac ultrasound evaluation resource, but public report-video pairs remain scarce |
 | CAMUS-based echo segmentation models | Echocardiography | CAMUS is a standard public segmentation and measurement benchmark | Strong baselines focus on chamber contours and ejection fraction estimation | Good beginner entry point for human-AI contour correction and measurement consistency studies |
@@ -58,7 +58,25 @@ Many recent ultrasound foundation models are trained on institutional or newly c
 | COVID-19 POCUS / COVID-BLUES models | Point-of-care ultrasound | Public GitHub/Hugging Face resources support lung ultrasound classification and severity analysis | Explainable POCUS models and newer prospective COVID-BLUES evaluations target lung pathology detection | Useful for protocol-aware POCUS triage and training; older aggregated data need careful split design |
 | TN3K thyroid segmentation models | Thyroid ultrasound | TN3K is a public thyroid nodule segmentation resource associated with TRFE-Net | TRFE-Net reports strong thyroid nodule segmentation performance in Computers in Biology and Medicine | Useful for interactive segmentation and annotation-efficiency baselines |
 | Dolphin / U2-BENCH | General ultrasound LVLM | U2-BENCH is publicly released on Hugging Face by DolphinAI | Benchmarks LVLMs across ultrasound classification, detection, regression, and generation tasks | Important public resource for ultrasound assistant evaluation, but not a full clinical interaction dataset |
-| FetalMind / Sonomate / other fetal VLMs | Fetal ultrasound | Often rely on large fetal ultrasound image-report/video-report collections that are not fully public | Report strong fetal interpretation, grounding, or assistant-style capabilities | These models motivate future public fetal HAIC datasets with reports, gaze, speech, and acquisition process traces |
+| Sonomate | Fetal ultrasound | Trained mainly on the non-public PULSE fetal ultrasound video-audio dataset and evaluated in part with the public Fetal Planes DB | Demonstrates visually grounded fetal ultrasound understanding from sonographer scan videos and speech | Strong HAIC example: useful ultrasound datasets should capture sonographer experience, temporal language, scanning context, and visual grounding, not only final labels |
+| FetalMind / other fetal VLMs | Fetal ultrasound | Often rely on large fetal ultrasound image-report/video-report collections that are not fully public | Report strong fetal interpretation, grounding, or assistant-style capabilities | These models motivate future public fetal HAIC datasets with reports, gaze, speech, and acquisition process traces |
+
+## HAIC Lens for Ultrasound Dataset Design
+
+The workshop context suggests that this list should not only help users find data, but also help them see what human-AI collaboration in ultrasound could look like.
+
+- **Sonographer experience as data**: Sonomate shows the value of pairing fetal ultrasound video with spoken sonographer reasoning and temporal grounding. Public datasets rarely contain this kind of scan-time human signal.
+- **Contextual AI for interventions**: The CAI4CAI framework argues that computer-assisted intervention systems need context, human factors, shared representations, and collaborative decision-making rather than isolated image classification alone.
+- **Skill augmentation**: For ultrasound, HAIC data should include acquisition quality, view-search behavior, probe movement, operator expertise, and feedback loops. Fetal Planes DB and HC18 are useful starting points, but they capture only part of the skill workflow.
+- **Human-AI complementarity**: Measurement and segmentation datasets such as CAMUS, HC18, BUSI, BUS-UCLM, and TN3K can support studies where humans correct AI outputs, compare uncertainty, or evaluate time savings, but they usually lack logged interaction traces.
+- **Explainability and trust**: POCUS and breast/thyroid lesion datasets can support explanation methods, but HAIC studies should evaluate whether explanations actually improve clinician decisions, workload, and calibration.
+- **From model benchmark to collaboration benchmark**: U2-BENCH is important for ultrasound LVLM evaluation, while future HAIC benchmarks should additionally record human prompts, AI responses, human corrections, confidence changes, and task outcomes.
+
+Useful HAIC-oriented references:
+
+- [A visually grounded language model for fetal ultrasound understanding](https://www.nature.com/articles/s41551-025-01578-3)
+- [CAI4CAI: The Rise of Contextual Artificial Intelligence in Computer Assisted Interventions](https://doi.org/10.1109/JPROC.2019.2946993)
+- [Human-AI Collaboration and Explainability for 2D/3D Registration Quality Assurance](https://arxiv.org/abs/2507.17597)
 
 Legacy note: DDTI is a historically important thyroid ultrasound dataset, but the original public access pages appear unstable. It is kept as a candidate at the end of `data/datasets.csv` until a stable legitimate source is confirmed.
 
