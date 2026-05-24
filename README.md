@@ -32,6 +32,17 @@ The structured source of truth is [`data/datasets.csv`](data/datasets.csv). It i
 
 The yellow **Sonomate / PULSE** marker is not listed as a public dataset. It highlights an important non-public data pattern: Sonomate was trained mainly on PULSE, a fetal ultrasound video-audio dataset that captures sonographer speech and scan-time context. We place it in the highest interaction-signal row because it shows the kind of temporally grounded human experience that future public HAIC datasets should capture, even though the dataset itself is not openly available.
 
+GitHub renders the map as a single image, so the links below provide direct access to the datasets shown in the figure.
+
+| Domain | Dataset links |
+|---|---|
+| Cardiac | [EchoNet-Dynamic](https://echonet.github.io/dynamic/) · [EchoNet-Pediatric](https://echonet.github.io/pediatric/) · [CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/) |
+| Fetal / OB | [Fetal Planes DB](https://zenodo.org/record/3904280) · [HC18](https://zenodo.org/records/1327317) · [Sonomate / PULSE gap](https://www.nature.com/articles/s41551-025-01578-3) |
+| Breast | [BUS-UCLM](https://github.com/noeliavallez/BUS-UCLM-Dataset) · [BUSI](https://scholar.cu.edu.eg/?q=afahmy/pages/dataset) · [OASBUD](https://zenodo.org/record/545928) |
+| Thyroid | [TN-SCUI2020](https://tn-scui2020.grand-challenge.org/) · [TN3K](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation) |
+| POCUS | [COVID-BLUES](https://huggingface.co/datasets/jannisborn/COVID-BLUES) · [COVID-19 POCUS](https://github.com/jannisborn/covid19_ultrasound) · [Nerve Segmentation](https://www.kaggle.com/c/ultrasound-nerve-segmentation) |
+| General US VLM / imaging | [U2-BENCH](https://huggingface.co/datasets/DolphinAI/u2-bench) · [PICMUS](https://www.creatis.insa-lyon.fr/Challenge/IEEE_IUS_2016/) |
+
 ## Starter View
 
 | Dataset | Ultrasound area | Public source | Paper/source | Beginner use | HAIC relevance |
