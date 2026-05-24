@@ -63,7 +63,7 @@ Many recent ultrasound foundation models are trained on institutional or newly c
 
 ## HAIC Lens for Ultrasound Dataset Design
 
-The workshop context suggests that this list should not only help users find data, but also help them see what human-AI collaboration in ultrasound could look like.
+This list is intended not only to help users find data, but also to clarify what human-AI collaboration in ultrasound could look like.
 
 - **Sonographer experience as data**: Sonomate shows the value of pairing fetal ultrasound video with spoken sonographer reasoning and temporal grounding. Public datasets rarely contain this kind of scan-time human signal.
 - **Contextual AI for interventions**: The CAI4CAI framework argues that computer-assisted intervention systems need context, human factors, shared representations, and collaborative decision-making rather than isolated image classification alone.
