@@ -38,7 +38,9 @@ The curated working list includes:
 
 ## Documentation-Based HAIC Annotation
 
-The HAIC level is not a subjective quality score. It is a rule-based annotation of the richest human-centered signal that is publicly documented for a resource.
+The HAIC level is not a subjective quality score and is not computed automatically from metadata fields. It is a rule-based annotation of the richest human-centered signal that is explicitly supported by public documentation for a resource.
+
+The surrounding fields, such as `resource_type`, `task`, and `data_type`, help readers understand and filter the resource. They are not a scoring formula. The annotation table keeps `dataset_url`, `paper_url`, and `haic_evidence_url` beside each HAIC label so that use cases and limitations can be checked against public evidence. Use cases and limitations are maintainer-inferred summaries, not official dataset-author claims unless explicitly supported by the linked source.
 
 | Level | Signal type | Typical evidence |
 |---|---|---|

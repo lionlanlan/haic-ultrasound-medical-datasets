@@ -2,7 +2,7 @@
 
 The curated working table is maintained in `data/datasets.csv`. A rule-based annotation table is maintained in `data/haic_annotations_curated.csv`. A broader seed table is maintained in `data/public_ultrasound_seed_npj2025.csv`.
 
-For HAIC level assignment rules, see [`haic_annotation_rubric.md`](haic_annotation_rubric.md).
+For HAIC level assignment rules, see [`haic_annotation_rubric.md`](haic_annotation_rubric.md). HAIC levels are assigned from public documentation using a rule-based rubric; they are not automatically computed from the metadata fields.
 
 ## Curated Working Table
 
@@ -43,17 +43,21 @@ The seed table is intentionally broader than the curated working list. It record
 
 `data/haic_annotations_curated.csv` contains rule-based L0-L5 annotations for the current curated working list. It is intentionally separate from `data/datasets.csv` so that dataset links and descriptive notes can evolve without hiding the evidence logic used for HAIC mapping.
 
+In `data/datasets.csv`, source links are named `public_source_url` and `paper_or_usage_url`. In the HAIC annotation table, the same information is copied as `dataset_url` and `paper_url` so readers can review the annotation evidence without switching tables.
+
 | Field | Meaning |
 |---|---|
 | `name` | Dataset, benchmark, challenge, or resource name matching the curated working list. |
+| `dataset_url` | Official dataset, challenge, repository, or stable source URL. |
+| `paper_url` | Dataset paper, data descriptor, or representative usage paper. |
 | `resource_type` | `primary_dataset`, `challenge_dataset`, `derived_benchmark`, `model_training_corpus`, or `catalogue_entry`. |
 | `clinical_domain` | Clinical or technical domain. |
 | `task` | Main task(s), separated by semicolons. |
 | `data_type` | Publicly documented data types, separated by semicolons. |
 | `haic_signal_level` | Rule-based HAIC signal level from L0 to L5. |
-| `haic_use_case` | Plausible HAIC use case supported by the documented signal. |
-| `limitation` | Missing human-centered information or access risk. |
-| `evidence_url` | URL used to justify the annotation. |
+| `haic_use_case` | Maintainer-inferred HAIC use case supported by the documented signal. |
+| `limitation` | Maintainer-inferred missing human-centered information or access risk. |
+| `haic_evidence_url` | Public source used to justify the HAIC annotation. This may be the dataset page, paper, repository README, benchmark card, or challenge page. |
 | `confidence` | `high`, `medium`, or `low`, based on evidence clarity. |
 | `last_checked` | Date when access and evidence were last checked. |
 
@@ -71,8 +75,8 @@ When a seed entry is promoted into the curated working table, maintainers should
 | `task` | Main task(s), such as segmentation, classification, measurement, VQA, report generation, quality assessment, reconstruction, or registration. |
 | `data_type` | Publicly documented data types. |
 | `haic_signal_level` | Rule-based HAIC signal level from L0 to L5. |
-| `haic_use_case` | Plausible HAIC use case supported by the documented signal. |
-| `evidence_url` | URL used to justify the annotation. |
+| `haic_use_case` | Maintainer-inferred HAIC use case supported by the documented signal. |
+| `haic_evidence_url` | Public source used to justify the HAIC annotation. |
 | `confidence` | `high`, `medium`, or `low`, based on evidence clarity. |
 | `last_checked` | Date when access and evidence were last checked. |
 

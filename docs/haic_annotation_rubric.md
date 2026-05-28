@@ -2,7 +2,9 @@
 
 This repository uses documentation-based annotation rather than subjective scoring. Each dataset or benchmark is annotated from publicly available evidence such as dataset pages, data descriptors, papers, challenge pages, GitHub/Hugging Face/Zenodo/Kaggle records, or supplementary materials.
 
-The HAIC level should be interpreted as **available human-centered signal richness**, not as dataset quality, clinical utility, or model performance.
+The HAIC level should be interpreted as **available human-centered signal richness**, not as dataset quality, clinical utility, or model performance. It is not automatically computed from metadata fields. Fields such as `resource_type`, `task`, and `data_type` organize the evidence and make the annotation easier to review, but the level is assigned from public documentation using the rules below.
+
+The `haic_use_case` and `limitation` fields are maintainer-inferred summaries from the documented dataset contents, tasks, and access notes. They should not be read as official claims made by the original dataset authors unless the evidence URL explicitly says so.
 
 ## Core Fields
 
@@ -16,9 +18,9 @@ The HAIC level should be interpreted as **available human-centered signal richne
 | `task` | Main task(s), such as classification, segmentation, measurement, detection, VQA, report generation, quality assessment, reconstruction, or registration. |
 | `data_type` | Publicly documented data types, such as image, video, cine clip, mask, bounding box, measurement, report, caption, QA pair, RF/channel data, or metadata. |
 | `haic_signal_level` | Rule-based HAIC signal level from L0 to L5. |
-| `haic_use_case` | Plausible HAIC use case supported by the documented signal. |
-| `limitation` | Missing human-centered information or access risk. |
-| `evidence_url` | URL used to justify the annotation. |
+| `haic_use_case` | Maintainer-inferred HAIC use case supported by the documented signal. |
+| `limitation` | Maintainer-inferred missing human-centered information or access risk. |
+| `haic_evidence_url` | Public source used to justify the HAIC annotation. This may be the dataset page, paper, repository README, benchmark card, or challenge page. |
 | `confidence` | `high`, `medium`, or `low`, based on evidence clarity. |
 | `last_checked` | Date when access and evidence were last checked. |
 
