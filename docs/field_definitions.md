@@ -1,6 +1,10 @@
 # Field Definitions
 
-The main table is maintained in `data/datasets.csv`.
+The curated working table is maintained in `data/datasets.csv`. A rule-based annotation table is maintained in `data/haic_annotations_curated.csv`. A broader seed table is maintained in `data/public_ultrasound_seed_npj2025.csv`.
+
+For HAIC level assignment rules, see [`haic_annotation_rubric.md`](haic_annotation_rubric.md).
+
+## Curated Working Table
 
 | Field | Meaning |
 |---|---|
@@ -19,11 +23,65 @@ The main table is maintained in `data/datasets.csv`.
 | `limitations` | Missing information or risks for HAIC use. |
 | `status` | `ready` for entries with a plausible public source; `candidate` for entries requiring access/license verification. |
 
+## Public Ultrasound Seed Table
+
+The seed table is intentionally broader than the curated working list. It records datasets reported in a recent public ultrasound resource catalogue so they can be verified and annotated over time.
+
+| Field | Meaning |
+|---|---|
+| `seed_id` | Stable row number from the seed table. |
+| `dataset_name` | Dataset name as reported in the source catalogue. |
+| `anatomy` | Anatomy or application area reported in the source catalogue. |
+| `total_dataset_size` | Reported dataset size. `unknown` means the value was not available in the source table. |
+| `access_type` | `OA` for open access or `AR` for access by request, following the source catalogue terminology. |
+| `sonodqs` | SonoDQS tier reported by the source catalogue. This is a reporting-completeness indicator, not a HAIC score. |
+| `in_curated_table` | Whether the dataset currently has a corresponding row in `data/datasets.csv`. |
+| `curated_name` | Name used in `data/datasets.csv` when a corresponding row exists. |
+| `curation_note` | Current local maintenance status. |
+
+## HAIC Annotation Table
+
+`data/haic_annotations_curated.csv` contains rule-based L0-L5 annotations for the current curated working list. It is intentionally separate from `data/datasets.csv` so that dataset links and descriptive notes can evolve without hiding the evidence logic used for HAIC mapping.
+
+| Field | Meaning |
+|---|---|
+| `name` | Dataset, benchmark, challenge, or resource name matching the curated working list. |
+| `resource_type` | `primary_dataset`, `challenge_dataset`, `derived_benchmark`, `model_training_corpus`, or `catalogue_entry`. |
+| `clinical_domain` | Clinical or technical domain. |
+| `task` | Main task(s), separated by semicolons. |
+| `data_type` | Publicly documented data types, separated by semicolons. |
+| `haic_signal_level` | Rule-based HAIC signal level from L0 to L5. |
+| `haic_use_case` | Plausible HAIC use case supported by the documented signal. |
+| `limitation` | Missing human-centered information or access risk. |
+| `evidence_url` | URL used to justify the annotation. |
+| `confidence` | `high`, `medium`, or `low`, based on evidence clarity. |
+| `last_checked` | Date when access and evidence were last checked. |
+
+## Recommended Fields for New Entries
+
+When a seed entry is promoted into the curated working table, maintainers should verify or add:
+
+| Field | Meaning |
+|---|---|
+| `dataset_url` | Official dataset, challenge, repository, or stable source URL. |
+| `paper_url` | Dataset paper, data descriptor, or representative usage paper. |
+| `access_status` | `open`, `request_access`, `challenge`, `restricted`, `broken`, or `needs_verification`. |
+| `resource_type` | `primary_dataset`, `challenge_dataset`, `derived_benchmark`, `model_training_corpus`, or `catalogue_entry`. |
+| `clinical_domain` | Clinical or technical domain. |
+| `task` | Main task(s), such as segmentation, classification, measurement, VQA, report generation, quality assessment, reconstruction, or registration. |
+| `data_type` | Publicly documented data types. |
+| `haic_signal_level` | Rule-based HAIC signal level from L0 to L5. |
+| `haic_use_case` | Plausible HAIC use case supported by the documented signal. |
+| `evidence_url` | URL used to justify the annotation. |
+| `confidence` | `high`, `medium`, or `low`, based on evidence clarity. |
+| `last_checked` | Date when access and evidence were last checked. |
+
 ## Maintenance Rules
 
 - Prefer official dataset pages over secondary mirrors.
 - Include a paper or representative usage link whenever possible.
 - Mark uncertain entries as `candidate`.
+- Keep seed entries separate from curated ready-to-use recommendations.
+- Do not treat SonoDQS as a HAIC-readiness score.
 - Keep the main table ultrasound-first.
 - Do not claim a dataset is fully open unless access and license have been checked.
-

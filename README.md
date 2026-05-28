@@ -1,4 +1,4 @@
-# Public Ultrasound Medical Datasets for HAIC Research
+﻿# Public Ultrasound Medical Datasets for HAIC Research
 
 A curated, public dataset guide for ultrasound medical imaging and human-AI collaboration (HAIC) research.
 
@@ -15,9 +15,19 @@ This list prioritizes:
 
 General radiology, pathology, and surgery datasets are useful for HAIC methodology, but they are not the main focus of this repository. The main table is ultrasound-first.
 
-## Main Dataset Table
+## Resource Layers
 
-The structured source of truth is [`data/datasets.csv`](data/datasets.csv). It includes:
+This repository keeps separate layers so the public list remains useful without overclaiming that every entry has been fully downloaded or clinically audited.
+
+| Layer | File | Purpose |
+|---|---|---|
+| Curated working list | [`data/datasets.csv`](data/datasets.csv) | Verified or candidate ultrasound resources with links, papers, access notes, beginner tasks, HAIC relevance, and limitations. |
+| HAIC annotation table | [`data/haic_annotations_curated.csv`](data/haic_annotations_curated.csv) | Rule-based L0-L5 HAIC signal annotations for the current curated working list. |
+| Public ultrasound seed list | [`data/public_ultrasound_seed_npj2025.csv`](data/public_ultrasound_seed_npj2025.csv) | A broad seed table of 72 public ultrasound datasets reported in a recent public ultrasound resource catalogue. Entries in this file still require URL verification and HAIC annotation before being treated as ready-to-use recommendations. |
+| Annotation rubric | [`docs/haic_annotation_rubric.md`](docs/haic_annotation_rubric.md) | Documentation-based rules for assigning HAIC signal levels and confidence labels. |
+| Field definitions | [`docs/field_definitions.md`](docs/field_definitions.md) | Column definitions and maintenance rules. |
+
+The curated working list includes:
 
 - official dataset or source links;
 - paper or representative usage links;
@@ -25,6 +35,29 @@ The structured source of truth is [`data/datasets.csv`](data/datasets.csv). It i
 - beginner-friendly use cases;
 - HAIC relevance;
 - limitations for ultrasound human-AI collaboration.
+
+## Documentation-Based HAIC Annotation
+
+The HAIC level is not a subjective quality score. It is a rule-based annotation of the richest human-centered signal that is publicly documented for a resource.
+
+| Level | Signal type | Typical evidence |
+|---|---|---|
+| L0 | unclear or inaccessible | broken links, unclear contents, or insufficient documentation |
+| L1 | labels / masks | class labels, segmentation masks, bounding boxes, ROIs |
+| L2 | measurement / quality | measurements, contours, quality scores, biometrics, view checks |
+| L3 | language / reasoning | reports, captions, VQA, instructions, explanations, multimodal reasoning |
+| L4 | skill / workflow | standard-plane labels, scan protocol, acquisition sequence, operator or workflow context |
+| L5 | interaction traces | AI suggestions, human corrections, speech, gaze, probe motion, operation logs, feedback loops |
+
+Each resource should be assigned to the highest level supported by public evidence. Ambiguous cases are coded conservatively and marked with lower confidence.
+
+## Related Resource Catalogues
+
+Prior ultrasound AI reviews have summarized model tasks and domain-specific applications. Recent public resource catalogues have also mapped public ultrasound datasets and open-source ultrasound models. This repository uses those efforts as background, but focuses on a different practical question: which public ultrasound resources are usable for HAIC studies, and what human-centered signals are missing?
+
+- [On the public dissemination and open sourcing of ultrasound resources, datasets and deep learning models](https://pmc.ncbi.nlm.nih.gov/articles/PMC12722232/)
+- [Deep Learning in Medical Ultrasound Analysis: A Review](https://www.sciencedirect.com/science/article/pii/S2095809918301887)
+- [A review of deep learning in fetal ultrasound imaging](https://www.sciencedirect.com/science/article/pii/S1361841522002572)
 
 ## Dataset Map
 
@@ -36,11 +69,11 @@ GitHub renders the map as a single image, so the links below provide direct acce
 
 | Domain | Dataset links |
 |---|---|
-| Cardiac | [EchoNet-Dynamic](https://echonet.github.io/dynamic/) · [EchoNet-Pediatric](https://echonet.github.io/pediatric/) · [CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/) |
-| Fetal / OB | [Fetal Planes DB](https://zenodo.org/record/3904280) · [HC18](https://zenodo.org/records/1327317) · [Sonomate / PULSE gap](https://www.nature.com/articles/s41551-025-01578-3) |
-| Breast | [BUS-UCLM](https://github.com/noeliavallez/BUS-UCLM-Dataset) · [BUSI](https://scholar.cu.edu.eg/?q=afahmy/pages/dataset) · [OASBUD](https://zenodo.org/record/545928) |
+| Cardiac | [EchoNet-Dynamic](https://echonet.github.io/dynamic/) / [EchoNet-Pediatric](https://echonet.github.io/pediatric/) / [CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/) |
+| Fetal / OB | [Fetal Planes DB](https://zenodo.org/record/3904280) / [HC18](https://zenodo.org/records/1327317) / [Sonomate / PULSE gap](https://www.nature.com/articles/s41551-025-01578-3) |
+| Breast | [BUS-UCLM](https://github.com/noeliavallez/BUS-UCLM-Dataset) / [BUSI](https://scholar.cu.edu.eg/?q=afahmy/pages/dataset) / [OASBUD](https://zenodo.org/record/545928) |
 | Thyroid | [TN3K](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation) |
-| POCUS | [COVID-BLUES](https://huggingface.co/datasets/jannisborn/COVID-BLUES) · [COVID-19 POCUS](https://github.com/jannisborn/covid19_ultrasound) · [Nerve Segmentation](https://www.kaggle.com/c/ultrasound-nerve-segmentation) |
+| POCUS | [COVID-BLUES](https://huggingface.co/datasets/jannisborn/COVID-BLUES) / [COVID-19 POCUS](https://github.com/jannisborn/covid19_ultrasound) / [Nerve Segmentation](https://www.kaggle.com/c/ultrasound-nerve-segmentation) |
 | General US VLM | [U2-BENCH](https://huggingface.co/datasets/DolphinAI/u2-bench) |
 
 **Imaging research note.** PICMUS is kept in `data/datasets.csv` as an ultrasound imaging research resource, but it is not shown in the clinical HAIC map above. PICMUS is a plane-wave ultrasound imaging challenge built around raw pre-beamformed channel data for beamforming and image reconstruction, rather than a clinical diagnosis, reporting, or interaction dataset.
@@ -142,3 +175,4 @@ Useful contributions include:
 ## License
 
 This dataset guide is released under [CC BY 4.0](LICENSE).
+

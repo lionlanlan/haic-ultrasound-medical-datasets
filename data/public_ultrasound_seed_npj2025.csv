@@ -1,0 +1,73 @@
+seed_id,dataset_name,anatomy,total_dataset_size,access_type,sonodqs,in_curated_table,curated_name,curation_note
+1,FETAL PLANES DB,"Fetus, fetal abdomen, fetal brain, fetal femur, fetal thorax, maternal cervix",12400,OA,Gold,yes,Fetal Planes DB,curated ready entry
+2,RESECT,Brain,23,OA,Gold,no,,needs URL and HAIC annotation
+3,DDTI,Thyroid,481,OA,Silver,yes,DDTI,legacy candidate; stable official access not confirmed
+4,Ultrasound nerve segmentation,Brachial plexus,16778,OA,Bronze,yes,Ultrasound Nerve Segmentation,curated ready entry
+5,Ultrasound image enhancement,"Thyroid, liver, breast, kidney, and carotid artery",2464,OA,Bronze,no,,needs URL and HAIC annotation
+6,Tufts medical echocardiogram dataset (TMED),"Aortic stenosis, heart",6567,AR,Bronze,no,,needs URL and HAIC annotation
+7,COVIDx-US,Lung,242,OA,Bronze,yes,COVIDx-US,curated ready entry
+8,The open kidney ultrasound data set,Kidney,514,AR,Gold,yes,Open Kidney Ultrasound Dataset,curated candidate entry
+9,FPUS23,Ultrasound fetus phantom,15728,OA,Steel,no,,needs URL and HAIC annotation
+10,Thyroid ultrasound cine-clip,Thyroid,167,AR,Steel,no,,needs URL and HAIC annotation
+11,Reconstructing of 2D ultrasound (US) images into a 3D volume,Forearms,2400,AR,Bronze,no,,needs URL and HAIC annotation
+12,Fetal abdominal structures segmentation dataset using ultrasonic images,"Fetal abdomen, fetal liver, fetal stomach, fetal aorta artery, fetal spine, intrahepatic portion of the umbilical vein",1588,OA,Gold,no,,needs URL and HAIC annotation
+13,Echocardiogram videos (EchoNet-Dynamic),Heart,10300,AR,Silver,yes,EchoNet-Dynamic,curated ready entry
+14,FALLMUD,Fascia lata,10081,OA,Gold,no,,needs URL and HAIC annotation
+15,Micro-ultrasound prostate segmentation dataset,Prostate,102,OA,Steel,no,,needs URL and HAIC annotation
+16,CAMUS,Heart,500,OA,Steel,yes,CAMUS,curated ready entry
+17,Echocardiography (EchoNet-LVH),Heart,12999,AR,Bronze,no,,needs URL and HAIC annotation
+18,Regensburg Pediatric Appendicitis Dataset,Appendix,7825,OA,Platinum,no,,needs URL and HAIC annotation
+19,Gallbladder ultrasound video,Gallbladder,1046855,OA,Steel,no,,needs URL and HAIC annotation
+20,Gallbladder cancer ultrasound,Gallbladder,1255,OA,Platinum,no,,needs URL and HAIC annotation
+21,Breast lesion detection in ultrasound videos (BUSV),Breast,928,OA,Gold,no,,needs URL and HAIC annotation
+22,Muscle-tendon junction tracking in ultrasound images,Muscle-tendon junction,1250,OA,Gold,no,,needs URL and HAIC annotation
+23,Breast ultrasound images dataset,Breast,780,OA,Bronze,yes,BUSI,curated ready entry
+24,BITE,"Liver, gallbladder, breast, gastrointestinal, genitourinary",3477,OA,Gold,no,,needs URL and HAIC annotation
+25,Dermatologic ultrasound images for classification,"Skin, hair, nail",3882,OA,Steel,no,,needs URL and HAIC annotation
+26,Polycystic ovary ultrasound images dataset,Ovary,1924,OA,Bronze,no,,needs URL and HAIC annotation
+27,CUBS,Breast,560,OA,Silver,no,,needs URL and HAIC annotation
+28,Knee ultrasound dataset in a population-based cohort,Knee,132890,AR,Gold,no,,needs URL and HAIC annotation
+29,BioBank: Carotid artery ultrasound image (left) (20222) and (right) (20223),Carotid artery,93915,AR,Silver,no,,needs URL and HAIC annotation
+30,ReMIND2Reg,Brain,3890,OA,Gold,no,,needs URL and HAIC annotation
+31,ReMIND,Brain,4866,OA,Diamond,no,,needs URL and HAIC annotation
+32,HC18,Fetal head,999,OA,Steel,yes,HC18,curated ready entry
+33,KFGNet,Head and brain,403,OA,Platinum,no,,needs URL and HAIC annotation
+34,BUSIS,Breast,562,AR,Gold,no,,needs URL and HAIC annotation
+35,Ultrasound Elastography,Breast,299,OA,Bronze,no,,needs URL and HAIC annotation
+36,TUS-REC,Thyroid,3858,OA,Silver,no,,needs URL and HAIC annotation
+37,Breast ultrasound B dataset,Breast,163,OA,Gold,no,,needs URL and HAIC annotation
+38,Thyroid,Thyroid,649,OA,Steel,no,,needs URL and HAIC annotation
+39,CCA,Carotid artery,2842,OA,Silver,no,,needs URL and HAIC annotation
+40,Chinese ultrasound-report dataset,Abdomen,33309,OA,Silver,no,,needs URL and HAIC annotation
+41,GDPH & SYSUCC,Breast,2360,AR,Gold,no,,needs URL and HAIC annotation
+42,STU-Hospital,Breast,unknown,OA,Steel,no,,needs URL and HAIC annotation
+43,mu-Reg,Prostate,unknown,OA,Steel,no,,needs URL and HAIC annotation
+44,mu-RegPro,Prostate,108,OA,Steel,no,,needs URL and HAIC annotation
+45,UCLA,Breast,1151,OA,Gold,no,,needs URL and HAIC annotation
+46,LEPset,Liver,11500,OA,Gold,no,,needs URL and HAIC annotation
+47,Geometric ultrasound localization microscopy,"Microbubbles in a flow phantom, rat and human brains",unknown,OA,Bronze,no,,needs URL and HAIC annotation
+48,BioBank: Carotid ultrasound image (30005),Carotid artery,83193,AR,Gold,no,,needs URL and HAIC annotation
+49,COVID-BLUES,Lung,362,OA,Diamond,yes,COVID-BLUES,curated ready entry
+50,POCUS Dataset for COVID-19 Detection,Lung,211,OA,Steel,yes,COVID-19 POCUS,curated ready entry
+51,MIMIC-IV-ECHO,Heart,525000,AR,Gold,no,,needs URL and HAIC annotation
+52,Ultrasound guided regional anesthesia,Brachial plexus nerves,277,OA,Platinum,no,,needs URL and HAIC annotation
+53,Unity Imaging Colloborative,Heart,14255,AR,Gold,no,,needs URL and HAIC annotation
+54,C-TRUS Dataset,Prostate,35988,OA,Silver,no,,needs URL and HAIC annotation
+55,ACOUSLIC-AI,Placenta,2825,AR,Gold,no,,needs URL and HAIC annotation
+56,PCOSGen,Ovaries,932,AR,Silver,no,,needs URL and HAIC annotation
+57,B-mode-and-CEUS-Liver,Liver,239,OA,Bronze,no,,needs URL and HAIC annotation
+58,BEHSOF,Heart,22089,OA,Gold,no,,needs URL and HAIC annotation
+59,LUMINOUS,Lung,321,OA,Platinum,no,,needs URL and HAIC annotation
+60,liver_ultrasound computer vision project,Liver,550,OA,Steel,no,,needs URL and HAIC annotation
+61,Dataset of B-mode fatty liver ultrasound images,Liver,550,OA,Silver,no,,needs URL and HAIC annotation
+62,Annotated ultrasound liver images dataset,Liver,150,OA,Steel,no,,needs URL and HAIC annotation
+63,TED project,Thyroid,298,OA,Steel,no,,needs URL and HAIC annotation
+64,BUS-BRA,Breast,1875,OA,Gold,no,,needs URL and HAIC annotation
+65,TN5000,Thyroid,5000,OA,Platinum,no,,needs URL and HAIC annotation
+66,Cardiac assessment and classification of ultrasound (CACTUS),Heart,30000,OA,Bronze,no,,needs URL and HAIC annotation
+67,POCUS LUS datasets,Lung,202,OA,Steel,no,,needs URL and HAIC annotation
+68,High-resolution ultrasound data for AI-based segmentation in mouse brain tumor,Brain,195,OA,Steel,no,,needs URL and HAIC annotation
+69,Dataset of 3D ultrasound neuroimages,Brain,70,AR,Gold,no,,needs URL and HAIC annotation
+70,A dataset of lung ultrasound images for automated AI-based lung disease classification,Lung,2611,OA,Steel,no,,needs URL and HAIC annotation
+71,Ultrasound normal kidney image computer vision dataset,Kidney,500,OA,Steel,no,,needs URL and HAIC annotation
+72,FOCUS: Four-chamber ultrasound image dataset for fetal cardiac biometric measurement,Fetal heart,2165,OA,Gold,no,,needs URL and HAIC annotation
