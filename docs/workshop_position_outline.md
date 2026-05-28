@@ -26,7 +26,7 @@ However, most public ultrasound resources still lack the signals needed for HAIC
 3. A starter guide connecting ultrasound dataset types to beginner-friendly research tasks.
 4. An ultrasound gap analysis motivating future collaborative ultrasound data collection.
 
-## Suggested 4-Page Structure
+## 4-Page Structure
 
 ### Page 1: Motivation
 
