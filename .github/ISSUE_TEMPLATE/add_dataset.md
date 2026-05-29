@@ -25,7 +25,6 @@ assignees: ""
 - Possible human-AI collaboration use cases:
 - Known limitations:
 - Evidence URL for the HAIC signal:
-- Confidence: high / medium / low
 
 ## Notes
 

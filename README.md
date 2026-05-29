@@ -22,9 +22,9 @@ This repository keeps separate layers so the public list remains useful without 
 | Layer | File | Purpose |
 |---|---|---|
 | Curated working list | [`data/datasets.csv`](data/datasets.csv) | Verified or candidate ultrasound resources with links, papers, access notes, beginner tasks, HAIC relevance, and limitations. |
-| HAIC annotation table | [`data/haic_annotations_curated.csv`](data/haic_annotations_curated.csv) | Rule-based L0-L5 HAIC signal annotations for the current curated working list. |
+| HAIC annotation table | [`data/haic_annotations_curated.csv`](data/haic_annotations_curated.csv) | Rule-based L0-L5 HAIC signal annotations for reviewed `ready` resources. Candidate resources are kept out of this table until their public source and contents are verified. |
 | Public ultrasound seed list | [`data/public_ultrasound_seed_npj2025.csv`](data/public_ultrasound_seed_npj2025.csv) | A broad seed table of 72 public ultrasound datasets reported in a recent public ultrasound resource catalogue. Entries in this file still require URL verification and HAIC annotation before being treated as ready-to-use recommendations. |
-| Annotation rubric | [`docs/haic_annotation_rubric.md`](docs/haic_annotation_rubric.md) | Documentation-based rules for assigning HAIC signal levels and confidence labels. |
+| Annotation rubric | [`docs/haic_annotation_rubric.md`](docs/haic_annotation_rubric.md) | Documentation-based rules for assigning HAIC signal levels. |
 | Field definitions | [`docs/field_definitions.md`](docs/field_definitions.md) | Column definitions and maintenance rules. |
 
 The curated working list includes:
@@ -44,14 +44,14 @@ The surrounding fields, such as `resource_type`, `task`, and `data_type`, help r
 
 | Level | Signal type | Typical evidence |
 |---|---|---|
-| L0 | unclear or inaccessible | broken links, unclear contents, or insufficient documentation |
+| L0 | no reviewed HAIC signal | no human-centered HAIC signal is documented, or the resource is outside the clinical HAIC scope |
 | L1 | labels / masks | class labels, segmentation masks, bounding boxes, ROIs |
 | L2 | measurement / quality | measurements, contours, quality scores, biometrics, view checks |
 | L3 | language / reasoning | reports, captions, VQA, instructions, explanations, multimodal reasoning |
 | L4 | skill / workflow | standard-plane labels, scan protocol, acquisition sequence, operator or workflow context |
 | L5 | interaction traces | AI suggestions, human corrections, speech, gaze, probe motion, operation logs, feedback loops |
 
-Each resource should be assigned to the highest level supported by public evidence. Ambiguous cases are coded conservatively and marked with lower confidence.
+Each reviewed resource should be assigned to the highest level supported by public evidence. Ambiguous or unverified resources remain in the candidate or seed table rather than receiving a public HAIC level.
 
 ## Related Resource Catalogues
 

@@ -4,6 +4,8 @@ This repository uses documentation-based annotation rather than subjective scori
 
 The HAIC level should be interpreted as **available human-centered signal richness**, not as dataset quality, clinical utility, or model performance. It is not automatically computed from metadata fields. Fields such as `resource_type`, `task`, and `data_type` organize the evidence and make the annotation easier to review, but the level is assigned from public documentation using the rules below.
 
+Only reviewed `ready` resources receive a public HAIC level. Resources whose public source, contents, or reuse terms are not yet verified should remain in the candidate or seed table until review is complete.
+
 The `haic_use_case` and `limitation` fields are maintainer-inferred summaries from the documented dataset contents, tasks, and access notes. They should not be read as official claims made by the original dataset authors unless the evidence URL explicitly says so.
 
 ## Core Fields
@@ -21,14 +23,13 @@ The `haic_use_case` and `limitation` fields are maintainer-inferred summaries fr
 | `haic_use_case` | Maintainer-inferred HAIC use case supported by the documented signal. |
 | `limitation` | Maintainer-inferred missing human-centered information or access risk. |
 | `haic_evidence_url` | Public source used to justify the HAIC annotation. This may be the dataset page, paper, repository README, benchmark card, or challenge page. |
-| `confidence` | `high`, `medium`, or `low`, based on evidence clarity. |
 | `last_checked` | Date when access and evidence were last checked. |
 
 ## HAIC Signal Levels
 
 | Level | Name | Documentation rule | Example use cases |
 |---|---|---|---|
-| L0 | Unclear or inaccessible | Public access, license, or contents are unclear; links are broken; or documentation is insufficient. | Candidate tracking; follow-up verification. |
+| L0 | No reviewed HAIC signal | The resource is reviewed but no human-centered HAIC signal is documented, or the resource is outside the clinical HAIC scope. | Scope clarification; imaging-only or reconstruction-only resources. |
 | L1 | Labels / masks | Public documentation confirms classification labels, masks, bounding boxes, ROIs, or similar final annotations. | Interactive segmentation, lesion localization, human correction of model outputs. |
 | L2 | Measurement / quality | Public documentation confirms measurements, contours used for measurement, quality scores, biometrics, or view checks. | AI-assisted measurement review, contour correction, quality control. |
 | L3 | Language / reasoning | Public documentation confirms reports, captions, VQA, instruction data, explanations, chain-of-thought annotations, or multimodal reasoning tasks. | Ultrasound assistant evaluation, report-aware reasoning, explanation support. |
@@ -37,20 +38,12 @@ The `haic_use_case` and `limitation` fields are maintainer-inferred summaries fr
 
 ## Assignment Rules
 
-1. Assign each resource to the highest HAIC signal level supported by publicly documented evidence.
+1. Assign each reviewed `ready` resource to the highest HAIC signal level supported by publicly documented evidence.
 2. Do not infer a higher level from domain importance alone. For example, a video dataset is not automatically L4 unless workflow, protocol, acquisition sequence, or skill-relevant context is documented.
-3. Use conservative coding when evidence is ambiguous. If unsure between two adjacent levels, assign the lower level and mark confidence as `medium` or `low`.
+3. Use conservative coding when evidence is ambiguous. If the public source or contents are not verified, keep the resource out of the HAIC annotation table until review is complete.
 4. Distinguish primary datasets from derived benchmarks. Benchmarks such as ultrasound LVLM evaluation sets may be valuable for assistant evaluation, but they do not necessarily record scan-time human-AI collaboration.
 5. Keep access and licensing separate from HAIC level. A dataset can have rich human-centered signals but still be restricted or request-access.
 6. Keep SonoDQS separate from HAIC annotation. SonoDQS describes dataset reporting completeness; HAIC signal level describes the type of human-centered signal available for collaboration research.
-
-## Confidence Labels
-
-| Confidence | Rule |
-|---|---|
-| `high` | Dataset page or paper explicitly documents the relevant signal and access route. |
-| `medium` | The signal is strongly supported by task definition and data description, but some details require verification. |
-| `low` | Evidence is indirect, links are unstable, or the entry relies on secondary reporting. |
 
 ## Recommended Screening Logic
 
@@ -58,7 +51,6 @@ The seed list should remain broad. For paper figures and newcomer recommendation
 
 - stable public or request-access URLs;
 - a clear paper or dataset descriptor;
-- `confidence` of `high` or `medium`;
 - enough documentation to justify the assigned HAIC level.
 
 SonoDQS can be used as a transparency filter, but it should not be treated as a HAIC-readiness score.

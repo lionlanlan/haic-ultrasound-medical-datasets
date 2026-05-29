@@ -1,6 +1,6 @@
 # Field Definitions
 
-The curated working table is maintained in `data/datasets.csv`. A rule-based annotation table is maintained in `data/haic_annotations_curated.csv`. A broader seed table is maintained in `data/public_ultrasound_seed_npj2025.csv`.
+The curated working table is maintained in `data/datasets.csv`. A rule-based annotation table for reviewed `ready` resources is maintained in `data/haic_annotations_curated.csv`. A broader seed table is maintained in `data/public_ultrasound_seed_npj2025.csv`.
 
 For HAIC level assignment rules, see [`haic_annotation_rubric.md`](haic_annotation_rubric.md). HAIC levels are assigned from public documentation using a rule-based rubric; they are not automatically computed from the metadata fields.
 
@@ -21,7 +21,7 @@ For HAIC level assignment rules, see [`haic_annotation_rubric.md`](haic_annotati
 | `beginner_friendly_tasks` | Practical starting tasks for new researchers. |
 | `haic_relevance` | Why the dataset can support human-AI collaboration research. |
 | `limitations` | Missing information or risks for HAIC use. |
-| `status` | `ready` for entries with a plausible public source; `candidate` for entries requiring access/license verification. |
+| `status` | `ready` for entries with a plausible public source and enough documentation for review; `candidate` for entries requiring access/license/content verification. |
 
 ## Public Ultrasound Seed Table
 
@@ -41,7 +41,7 @@ The seed table is intentionally broader than the curated working list. It record
 
 ## HAIC Annotation Table
 
-`data/haic_annotations_curated.csv` contains rule-based L0-L5 annotations for the current curated working list. It is intentionally separate from `data/datasets.csv` so that dataset links and descriptive notes can evolve without hiding the evidence logic used for HAIC mapping.
+`data/haic_annotations_curated.csv` contains rule-based L0-L5 annotations for reviewed `ready` resources from the curated working list. Candidate resources are kept in `data/datasets.csv` or the seed table until their public source, contents, and reuse terms are verified. The annotation table is intentionally separate from `data/datasets.csv` so that dataset links and descriptive notes can evolve without hiding the evidence logic used for HAIC mapping.
 
 In `data/datasets.csv`, source links are named `public_source_url` and `paper_or_usage_url`. In the HAIC annotation table, the same information is copied as `dataset_url` and `paper_url` so readers can review the annotation evidence without switching tables.
 
@@ -58,7 +58,6 @@ In `data/datasets.csv`, source links are named `public_source_url` and `paper_or
 | `haic_use_case` | Maintainer-inferred HAIC use case supported by the documented signal. |
 | `limitation` | Maintainer-inferred missing human-centered information or access risk. |
 | `haic_evidence_url` | Public source used to justify the HAIC annotation. This may be the dataset page, paper, repository README, benchmark card, or challenge page. |
-| `confidence` | `high`, `medium`, or `low`, based on evidence clarity. |
 | `last_checked` | Date when access and evidence were last checked. |
 
 ## Recommended Fields for New Entries
@@ -77,7 +76,6 @@ When a seed entry is promoted into the curated working table, maintainers should
 | `haic_signal_level` | Rule-based HAIC signal level from L0 to L5. |
 | `haic_use_case` | Maintainer-inferred HAIC use case supported by the documented signal. |
 | `haic_evidence_url` | Public source used to justify the HAIC annotation. |
-| `confidence` | `high`, `medium`, or `low`, based on evidence clarity. |
 | `last_checked` | Date when access and evidence were last checked. |
 
 ## Maintenance Rules
