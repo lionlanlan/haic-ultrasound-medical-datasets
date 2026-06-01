@@ -53,6 +53,16 @@ The surrounding fields, such as `resource_type`, `task`, and `data_type`, help r
 
 Each reviewed resource should be assigned to the highest level supported by public evidence. Ambiguous or unverified resources remain in the candidate or seed table rather than receiving a public HAIC level.
 
+## HAIC Task-Level Matrix
+
+The figure below is a draft framework view. It does not score individual datasets. Instead, it asks how common ultrasound dataset task families can support increasingly interactive HAIC tasks, from passive AI outputs to co-adaptive human-AI workflows.
+
+![HAIC task-readiness matrix](figures/haic_task_level_heatmap.svg)
+
+Rows represent HAIC interaction levels. L1 is the most basic setting, where AI produces an output and humans inspect it. Higher levels require human correction, selective collaboration, interactive guidance, and eventually logged co-adaptive workflows. Columns represent common basic task families for public ultrasound datasets, such as recognition, segmentation, measurement, acquisition guidance, VQA/reasoning, and reconstruction.
+
+Cell icons indicate whether a task family can support a HAIC level directly, after task transformation, only indirectly, or rarely with current public resources. A longer description is maintained in [`docs/haic_task_taxonomy.md`](docs/haic_task_taxonomy.md).
+
 ## Related Resource Catalogues
 
 Prior ultrasound AI reviews have summarized model tasks and domain-specific applications. Recent public resource catalogues have also mapped public ultrasound datasets and open-source ultrasound models. This repository uses those efforts as background, but focuses on a different practical question: which public ultrasound resources are usable for HAIC studies, and what human-centered signals are missing?
