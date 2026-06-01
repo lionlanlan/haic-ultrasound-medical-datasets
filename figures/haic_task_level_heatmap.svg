@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">HAIC task-readiness heatmap for public ultrasound resources</title>
+  <desc id="desc">A qualitative heatmap mapping basic ultrasound dataset task families to HAIC interaction levels from passive AI assistance to co-adaptive workflow.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .panel { fill: #ffffff; stroke: #d6e0ea; stroke-width: 1.4; }
+      .grid { stroke: #d6e0ea; stroke-width: 1; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 30px; fill: #17212b; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #465869; }
+      .axis { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 15px; fill: #17212b; }
+      .axisSmall { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #536779; }
+      .cellText { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 14px; fill: #17212b; }
+      .legendText { font-family: Arial, Helvetica, sans-serif; font-size: 13px; fill: #273646; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 13px; fill: #465869; }
+      .native { fill: #0f9f8f; }
+      .derivable { fill: #70c7df; }
+      .limited { fill: #ffd37a; }
+      .scarce { fill: #edf2f7; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1500" height="900"/>
+  <rect class="panel" x="48" y="42" width="1404" height="810" rx="18"/>
+
+  <text class="title" x="750" y="88" text-anchor="middle">HAIC Task-Readiness Matrix for Public Ultrasound Resources</text>
+  <text class="subtitle" x="750" y="118" text-anchor="middle">Rows show increasing human-AI interaction depth; columns show common basic tasks for ultrasound datasets.</text>
+
+  <!-- geometry -->
+  <!-- left=300 top=185 cw=180 ch=96 -->
+
+  <!-- column headers -->
+  <g>
+    <rect x="300" y="145" width="180" height="40" fill="#eef7ff" stroke="#d6e0ea"/>
+    <rect x="480" y="145" width="180" height="40" fill="#eef7ff" stroke="#d6e0ea"/>
+    <rect x="660" y="145" width="180" height="40" fill="#eef7ff" stroke="#d6e0ea"/>
+    <rect x="840" y="145" width="180" height="40" fill="#eef7ff" stroke="#d6e0ea"/>
+    <rect x="1020" y="145" width="180" height="40" fill="#eef7ff" stroke="#d6e0ea"/>
+    <rect x="1200" y="145" width="180" height="40" fill="#eef7ff" stroke="#d6e0ea"/>
+
+    <text class="axis" x="390" y="162" text-anchor="middle"><tspan x="390" dy="0">Recognition /</tspan><tspan x="390" dy="17">classification</tspan></text>
+    <text class="axis" x="570" y="162" text-anchor="middle"><tspan x="570" dy="0">Segmentation /</tspan><tspan x="570" dy="17">localization</tspan></text>
+    <text class="axis" x="750" y="162" text-anchor="middle"><tspan x="750" dy="0">Measurement /</tspan><tspan x="750" dy="17">quantification</tspan></text>
+    <text class="axis" x="930" y="162" text-anchor="middle"><tspan x="930" dy="0">Quality /</tspan><tspan x="930" dy="17">acquisition</tspan></text>
+    <text class="axis" x="1110" y="162" text-anchor="middle"><tspan x="1110" dy="0">Report / VQA /</tspan><tspan x="1110" dy="17">reasoning</tspan></text>
+    <text class="axis" x="1290" y="162" text-anchor="middle"><tspan x="1290" dy="0">Reconstruction /</tspan><tspan x="1290" dy="17">registration</tspan></text>
+  </g>
+
+  <!-- row labels -->
+  <g>
+    <text class="axis" x="270" y="226" text-anchor="end">L5 Co-adaptive workflow</text>
+    <text class="axisSmall" x="270" y="246" text-anchor="end">closed-loop human-AI process</text>
+    <text class="axis" x="270" y="322" text-anchor="end">L4 Interactive guidance</text>
+    <text class="axisSmall" x="270" y="342" text-anchor="end">AI guides human action</text>
+    <text class="axis" x="270" y="418" text-anchor="end">L3 Selective collaboration</text>
+    <text class="axisSmall" x="270" y="438" text-anchor="end">learning to defer / ask humans</text>
+    <text class="axis" x="270" y="514" text-anchor="end">L2 Human review / correction</text>
+    <text class="axisSmall" x="270" y="534" text-anchor="end">human checks and edits AI</text>
+    <text class="axis" x="270" y="610" text-anchor="end">L1 Passive AI assistance</text>
+    <text class="axisSmall" x="270" y="630" text-anchor="end">AI outputs, human observes</text>
+  </g>
+
+  <!-- heatmap cells: 6 columns x 5 rows -->
+  <!-- y rows: 185,281,377,473,569 -->
+  <g>
+    <!-- L5 -->
+    <rect class="scarce" x="300" y="185" width="180" height="96"/><rect class="scarce" x="480" y="185" width="180" height="96"/><rect class="scarce" x="660" y="185" width="180" height="96"/><rect class="scarce" x="840" y="185" width="180" height="96"/><rect class="scarce" x="1020" y="185" width="180" height="96"/><rect class="scarce" x="1200" y="185" width="180" height="96"/>
+    <text class="cellText" x="390" y="238" text-anchor="middle">Scarce</text><text class="cellText" x="570" y="238" text-anchor="middle">Scarce</text><text class="cellText" x="750" y="238" text-anchor="middle">Scarce</text><text class="cellText" x="930" y="238" text-anchor="middle">Scarce</text><text class="cellText" x="1110" y="238" text-anchor="middle">Scarce</text><text class="cellText" x="1290" y="238" text-anchor="middle">Scarce</text>
+
+    <!-- L4 -->
+    <rect class="limited" x="300" y="281" width="180" height="96"/><rect class="limited" x="480" y="281" width="180" height="96"/><rect class="limited" x="660" y="281" width="180" height="96"/><rect class="derivable" x="840" y="281" width="180" height="96"/><rect class="limited" x="1020" y="281" width="180" height="96"/><rect class="limited" x="1200" y="281" width="180" height="96"/>
+    <text class="cellText" x="390" y="334" text-anchor="middle">Limited</text><text class="cellText" x="570" y="334" text-anchor="middle">Limited</text><text class="cellText" x="750" y="334" text-anchor="middle">Limited</text><text class="cellText" x="930" y="334" text-anchor="middle">Derivable</text><text class="cellText" x="1110" y="334" text-anchor="middle">Limited</text><text class="cellText" x="1290" y="334" text-anchor="middle">Limited</text>
+
+    <!-- L3 -->
+    <rect class="derivable" x="300" y="377" width="180" height="96"/><rect class="derivable" x="480" y="377" width="180" height="96"/><rect class="derivable" x="660" y="377" width="180" height="96"/><rect class="derivable" x="840" y="377" width="180" height="96"/><rect class="derivable" x="1020" y="377" width="180" height="96"/><rect class="limited" x="1200" y="377" width="180" height="96"/>
+    <text class="cellText" x="390" y="430" text-anchor="middle">Derivable</text><text class="cellText" x="570" y="430" text-anchor="middle">Derivable</text><text class="cellText" x="750" y="430" text-anchor="middle">Derivable</text><text class="cellText" x="930" y="430" text-anchor="middle">Derivable</text><text class="cellText" x="1110" y="430" text-anchor="middle">Derivable</text><text class="cellText" x="1290" y="430" text-anchor="middle">Limited</text>
+
+    <!-- L2 -->
+    <rect class="derivable" x="300" y="473" width="180" height="96"/><rect class="derivable" x="480" y="473" width="180" height="96"/><rect class="derivable" x="660" y="473" width="180" height="96"/><rect class="derivable" x="840" y="473" width="180" height="96"/><rect class="derivable" x="1020" y="473" width="180" height="96"/><rect class="limited" x="1200" y="473" width="180" height="96"/>
+    <text class="cellText" x="390" y="526" text-anchor="middle">Derivable</text><text class="cellText" x="570" y="526" text-anchor="middle">Derivable</text><text class="cellText" x="750" y="526" text-anchor="middle">Derivable</text><text class="cellText" x="930" y="526" text-anchor="middle">Derivable</text><text class="cellText" x="1110" y="526" text-anchor="middle">Derivable</text><text class="cellText" x="1290" y="526" text-anchor="middle">Limited</text>
+
+    <!-- L1 -->
+    <rect class="native" x="300" y="569" width="180" height="96"/><rect class="native" x="480" y="569" width="180" height="96"/><rect class="native" x="660" y="569" width="180" height="96"/><rect class="native" x="840" y="569" width="180" height="96"/><rect class="native" x="1020" y="569" width="180" height="96"/><rect class="native" x="1200" y="569" width="180" height="96"/>
+    <text class="cellText" x="390" y="622" text-anchor="middle">Native</text><text class="cellText" x="570" y="622" text-anchor="middle">Native</text><text class="cellText" x="750" y="622" text-anchor="middle">Native</text><text class="cellText" x="930" y="622" text-anchor="middle">Native</text><text class="cellText" x="1110" y="622" text-anchor="middle">Native</text><text class="cellText" x="1290" y="622" text-anchor="middle">Native</text>
+  </g>
+
+  <!-- grid lines -->
+  <g>
+    <rect x="300" y="185" width="1080" height="480" fill="none" stroke="#aebdca" stroke-width="1.5"/>
+    <line class="grid" x1="480" y1="185" x2="480" y2="665"/><line class="grid" x1="660" y1="185" x2="660" y2="665"/><line class="grid" x1="840" y1="185" x2="840" y2="665"/><line class="grid" x1="1020" y1="185" x2="1020" y2="665"/><line class="grid" x1="1200" y1="185" x2="1200" y2="665"/>
+    <line class="grid" x1="300" y1="281" x2="1380" y2="281"/><line class="grid" x1="300" y1="377" x2="1380" y2="377"/><line class="grid" x1="300" y1="473" x2="1380" y2="473"/><line class="grid" x1="300" y1="569" x2="1380" y2="569"/>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(300,710)">
+    <text class="axis" x="0" y="0">Support code</text>
+    <rect class="native" x="0" y="22" width="24" height="18" rx="3"/><text class="legendText" x="34" y="36">Native: directly supported by the original task setting</text>
+    <rect class="derivable" x="360" y="22" width="24" height="18" rx="3"/><text class="legendText" x="394" y="36">Derivable: requires predictions, uncertainty, review protocol, or extra processing</text>
+    <rect class="limited" x="0" y="58" width="24" height="18" rx="3"/><text class="legendText" x="34" y="72">Limited: only indirect support; key interaction signals are missing</text>
+    <rect class="scarce" x="360" y="58" width="24" height="18" rx="3" stroke="#c9d3de"/><text class="legendText" x="394" y="72">Scarce: rarely supported by current public ultrasound resources</text>
+  </g>
+
+  <text class="note" x="750" y="830" text-anchor="middle">Draft matrix for framework discussion: it summarizes task-readiness patterns, not individual dataset quality.</text>
+</svg>
