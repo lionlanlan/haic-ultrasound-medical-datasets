@@ -2,9 +2,9 @@
 
 This repository uses documentation-based annotation rather than subjective scoring. Each dataset or benchmark is annotated from publicly available evidence such as dataset pages, data descriptors, papers, challenge pages, GitHub/Hugging Face/Zenodo/Kaggle records, or supplementary materials.
 
-The HAIC level should be interpreted as **available human-centered signal richness**, not as dataset quality, clinical utility, or model performance. It is not automatically computed from metadata fields. Fields such as `resource_type`, `task`, and `data_type` organize the evidence and make the annotation easier to review, but the level is assigned from public documentation using the rules below.
+The `haic_signal_level` field is a compact resource tag, not the full task-level HAIC readiness framework used in the paper. For the paper framework, see [`haic_task_taxonomy.md`](haic_task_taxonomy.md). In the current guide, the main distinction is between **base signals**, which allow a HAIC task to be constructed, and **evaluation signals**, which require user studies to measure workload, preference, trust, reliance, or clinical usefulness.
 
-Only reviewed `ready` resources receive a public HAIC level. Resources whose public source, contents, or reuse terms are not yet verified should remain in the candidate or seed table until review is complete.
+Candidate resources may appear when they are useful for HAIC mapping, but their access, scope, or reuse terms should remain explicitly marked until review is complete.
 
 The `haic_use_case` and `limitation` fields are maintainer-inferred summaries from the documented dataset contents, tasks, and access notes. They should not be read as official claims made by the original dataset authors unless the evidence URL explicitly says so.
 
@@ -19,15 +19,17 @@ The `haic_use_case` and `limitation` fields are maintainer-inferred summaries fr
 | `clinical_domain` | Clinical or technical domain, such as cardiac, fetal/OB, breast, thyroid, lung/POCUS, vascular, abdominal, kidney, prostate, or reconstruction. |
 | `task` | Main task(s), such as classification, segmentation, measurement, detection, VQA, report generation, quality assessment, reconstruction, or registration. |
 | `data_type` | Publicly documented data types, such as image, video, cine clip, mask, bounding box, measurement, report, caption, QA pair, RF/channel data, or metadata. |
-| `haic_signal_level` | Rule-based HAIC signal level from L0 to L5. |
+| `haic_signal_level` | Compact signal label from L0 to L5, used as a resource tag rather than a complete HAIC evaluation claim. |
 | `haic_use_case` | Maintainer-inferred HAIC use case supported by the documented signal. |
 | `limitation` | Maintainer-inferred missing human-centered information or access risk. |
 | `haic_evidence_url` | Public source used to justify the HAIC annotation. This may be the dataset page, paper, repository README, benchmark card, or challenge page. |
 | `last_checked` | Date when access and evidence were last checked. |
 
-## HAIC Signal Levels
+## Compact Signal Tags
 
-| Level | Name | Documentation rule | Example use cases |
+These tags summarize the richest documented signal type in a resource. They should be read together with `task`, `data_type`, `haic_use_case`, and `limitation`.
+
+| Tag | Name | Documentation rule | Example use cases |
 |---|---|---|---|
 | L0 | No reviewed HAIC signal | The resource is reviewed but no human-centered HAIC signal is documented, or the resource is outside the clinical HAIC scope. | Scope clarification; imaging-only or reconstruction-only resources. |
 | L1 | Labels / masks | Public documentation confirms classification labels, masks, bounding boxes, ROIs, or similar final annotations. | Interactive segmentation, lesion localization, human correction of model outputs. |
@@ -38,12 +40,12 @@ The `haic_use_case` and `limitation` fields are maintainer-inferred summaries fr
 
 ## Assignment Rules
 
-1. Assign each reviewed `ready` resource to the highest HAIC signal level supported by publicly documented evidence.
+1. Assign each reviewed resource to the highest compact signal tag supported by publicly documented evidence.
 2. Do not infer a higher level from domain importance alone. For example, a video dataset is not automatically L4 unless workflow, protocol, acquisition sequence, or skill-relevant context is documented.
 3. Use conservative coding when evidence is ambiguous. If the public source or contents are not verified, keep the resource out of the HAIC annotation table until review is complete.
 4. Distinguish primary datasets from derived benchmarks. Benchmarks such as ultrasound LVLM evaluation sets may be valuable for assistant evaluation, but they do not necessarily record scan-time human-AI collaboration.
 5. Keep access and licensing separate from HAIC level. A dataset can have rich human-centered signals but still be restricted or request-access.
-6. Keep SonoDQS separate from HAIC annotation. SonoDQS describes dataset reporting completeness; HAIC signal level describes the type of human-centered signal available for collaboration research.
+6. Keep SonoDQS separate from HAIC annotation. SonoDQS describes dataset reporting completeness; the compact signal tag describes documented signal type.
 
 ## Recommended Screening Logic
 

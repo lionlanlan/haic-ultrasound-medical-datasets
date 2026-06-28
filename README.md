@@ -2,7 +2,7 @@
 
 A curated, public dataset guide for ultrasound medical imaging and human-AI collaboration (HAIC) research.
 
-This repository focuses on datasets that can help researchers in the ultrasound community quickly understand what public data exists, what each dataset can be used for, and what is still missing for collaborative ultrasound AI.
+This repository focuses on datasets that can help researchers, developers, and clinical collaborators quickly understand what public ultrasound data exists, which HAIC task levels can be built from it, and what still requires new user studies or prospective interaction logs.
 
 ## Scope
 
@@ -22,9 +22,10 @@ This repository keeps separate layers so the public list remains useful without 
 | Layer | File | Purpose |
 |---|---|---|
 | Curated working list | [`data/datasets.csv`](data/datasets.csv) | Verified or candidate ultrasound resources with links, papers, access notes, beginner tasks, HAIC relevance, and limitations. |
-| HAIC annotation table | [`data/haic_annotations_curated.csv`](data/haic_annotations_curated.csv) | Rule-based L0-L5 HAIC signal annotations for reviewed `ready` resources. Candidate resources are kept out of this table until their public source and contents are verified. |
+| HAIC annotation table | [`data/haic_annotations_curated.csv`](data/haic_annotations_curated.csv) | Signal-level annotations for reviewed resources, including task type, data type, HAIC use case, and limitations. Candidate resources remain explicitly marked when access or scope still needs verification. |
 | Public ultrasound seed list | [`data/public_ultrasound_seed_npj2025.csv`](data/public_ultrasound_seed_npj2025.csv) | A broad seed table of 72 public ultrasound datasets reported in a recent public ultrasound resource catalogue. Entries in this file still require URL verification and HAIC annotation before being treated as ready-to-use recommendations. |
-| Annotation rubric | [`docs/haic_annotation_rubric.md`](docs/haic_annotation_rubric.md) | Documentation-based rules for assigning HAIC signal levels. |
+| Statistical master list | [`data/statistical_dataset_master.csv`](data/statistical_dataset_master.csv) / [`docs/statistical_dataset_master.md`](docs/statistical_dataset_master.md) | A deduplicated statistical pool combining the Guo/Alsharid 72-dataset seed list, U2-BENCH source datasets, and current curated-guide extras. Use this table for task-family counts and repository maintenance. |
+| Annotation rubric | [`docs/haic_annotation_rubric.md`](docs/haic_annotation_rubric.md) | Documentation-based rules for compact signal tags and evidence review. |
 | Field definitions | [`docs/field_definitions.md`](docs/field_definitions.md) | Column definitions and maintenance rules. |
 
 The curated working list includes:
@@ -36,32 +37,46 @@ The curated working list includes:
 - HAIC relevance;
 - limitations for ultrasound human-AI collaboration.
 
-## Documentation-Based HAIC Annotation
+## Base Signals, Evaluation Signals, and HAIC Readiness
 
-The HAIC level is not a subjective quality score and is not computed automatically from metadata fields. It is a rule-based annotation of the richest human-centered signal that is explicitly supported by public documentation for a resource.
+The guide separates two kinds of signals.
 
-The surrounding fields, such as `resource_type`, `task`, and `data_type`, help readers understand and filter the resource. They are not a scoring formula. The annotation table keeps `dataset_url`, `paper_url`, and `haic_evidence_url` beside each HAIC label so that use cases and limitations can be checked against public evidence. Use cases and limitations are maintainer-inferred summaries, not official dataset-author claims unless explicitly supported by the linked source.
+- **Base signals** decide whether a HAIC task can be constructed from a public dataset. They include native labels, masks, measurements, reports, scan states, model predictions, prediction-ground-truth differences, uncertainty scores, deferral rules, intermediate edits, and interaction logs.
+- **Evaluation signals** measure how humans actually use the task in a user study. They include preference, correction time, workload, accept/override behavior, trust calibration, reliance, skill retention, and clinical usefulness.
 
-| Level | Signal type | Typical evidence |
-|---|---|---|
-| L0 | no reviewed HAIC signal | no human-centered HAIC signal is documented, or the resource is outside the clinical HAIC scope |
-| L1 | labels / masks | class labels, segmentation masks, bounding boxes, ROIs |
-| L2 | measurement / quality | measurements, contours, quality scores, biometrics, view checks |
-| L3 | language / reasoning | reports, captions, VQA, instructions, explanations, multimodal reasoning |
-| L4 | skill / workflow | standard-plane labels, scan protocol, acquisition sequence, operator or workflow context |
-| L5 | interaction traces | AI suggestions, human corrections, speech, gaze, probe motion, operation logs, feedback loops |
+This distinction is central to the guide. Public datasets can often provide or derive base signals for L1-L3 HAIC tasks, but they do not replace user studies for evaluating real workload, trust, handoff behavior, or clinical benefit.
 
-Each reviewed resource should be assigned to the highest level supported by public evidence. Ambiguous or unverified resources remain in the candidate or seed table rather than receiving a public HAIC level.
+We use four support symbols in the task-level matrix:
+
+| Symbol | Meaning |
+|---|---|
+| ✓ | Original dataset already contains the base target needed for the task. |
+| ↻ | Proxy base signals can be derived through a reproducible protocol, such as adding model predictions, prediction-ground-truth differences, confidence scores, or deferral rules. |
+| ! | Support depends on dataset-specific temporal or process signals, such as scan sequences, probe states, intermediate edits, or interaction traces. |
+| - | Core base signals require new prospective human-AI interaction logs. |
 
 ## HAIC Task-Level Matrix
 
-The figure below is a draft framework view. It does not score individual datasets. Instead, it asks how common ultrasound dataset task families can support increasingly interactive HAIC tasks, from passive AI outputs to co-adaptive human-AI workflows.
+The figure below maps six ultrasound task families to five HAIC levels. It asks what base signals can be obtained from conventional datasets before adding a full user study.
 
-![HAIC task-readiness matrix](figures/haic_task_level_heatmap.svg)
+![HAIC task-readiness matrix](figures/haic_task_readiness_matrix.png)
 
-Rows represent HAIC interaction levels. L1 is the most basic setting, where AI produces an output and humans inspect it. Higher levels require human correction, selective collaboration, interactive guidance, and eventually logged co-adaptive workflows. Columns represent common basic task families for public ultrasound datasets, such as recognition, segmentation, measurement, acquisition guidance, VQA/reasoning, and reconstruction.
+Rows progress from one-way AI output to review/correction, selective collaboration, multi-turn interaction, and longitudinal co-adaptation. Columns represent common public ultrasound task families. The column counts are approximate multi-label counts from the statistical master list, so one dataset may appear in more than one task family.
 
-Cell icons indicate whether a task family can support a HAIC level directly, after task transformation, only indirectly, or rarely with current public resources. A longer description is maintained in [`docs/haic_task_taxonomy.md`](docs/haic_task_taxonomy.md).
+A longer explanation is maintained in [`docs/haic_task_taxonomy.md`](docs/haic_task_taxonomy.md).
+
+## Task-Family Dataset Index
+
+The table below gives a clickable starting point for each task family. It is not exhaustive; the machine-readable source is [`data/statistical_dataset_master.csv`](data/statistical_dataset_master.csv).
+
+| Task family | Example public resources |
+|---|---|
+| Recognition / classification | [Fetal Planes DB](https://zenodo.org/record/3904280), [COVID-19 POCUS](https://github.com/jannisborn/covid19_ultrasound), [Open Kidney](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images), [U2-BENCH](https://huggingface.co/datasets/DolphinAI/u2-bench) |
+| Segmentation / localization | [CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/), [HC18](https://zenodo.org/records/1327317), [BUSI](https://scholar.cu.edu.eg/?q=afahmy/pages/dataset), [TN3K](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation), [MCE Dataset](https://github.com/dewenzeng/MCE_dataset), [Open Kidney](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images) |
+| Measurement / quantification | [EchoNet-Dynamic](https://echonet.github.io/dynamic/), [CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/), [HC18](https://zenodo.org/records/1327317), [K2MUSE](https://www.kaggle.com/datasets/98d67c253a7c820668aed0690cae20343481b8f8f8e0dafbe93b0c76d91f0ce6) |
+| Quality / acquisition | [Fetal Planes DB](https://zenodo.org/record/3904280), [FPUS23](https://doi.org/10.5281/zenodo.10040903), [Open Kidney](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images), [K2MUSE](https://www.kaggle.com/datasets/98d67c253a7c820668aed0690cae20343481b8f8f8e0dafbe93b0c76d91f0ce6) |
+| Report / VQA / reasoning | [U2-BENCH](https://huggingface.co/datasets/DolphinAI/u2-bench), [OpenBiomedVid / MIMICEchoQA](https://arxiv.org/abs/2504.14391), [FPUS23](https://doi.org/10.5281/zenodo.10040903) |
+| Reconstruction / registration | [PICMUS](https://www.creatis.insa-lyon.fr/Challenge/IEEE_IUS_2016/), [US simulation and segmentation](https://doi.org/10.1007/s11548-019-02046-5) |
 
 ## Related Resource Catalogues
 
@@ -106,6 +121,11 @@ GitHub renders the map as a single image, so the links below provide direct acce
 | DDTI | Thyroid ultrasound | Candidate: official source unstable | [SPIE 2015](https://doi.org/10.1117/12.2073532) | Thyroid nodule classification and segmentation | Ultrasound reporting and localization baseline |
 | TN3K | Thyroid ultrasound | [Repository](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation) | [CBM 2022](https://doi.org/10.1016/j.compbiomed.2022.106389) | Thyroid nodule segmentation | Interactive segmentation and correction baseline |
 | U2-BENCH | Ultrasound VLM benchmark | [Hugging Face](https://huggingface.co/datasets/DolphinAI/u2-bench) | [arXiv 2025](https://arxiv.org/abs/2505.17779) | LVLM evaluation | Ultrasound assistant evaluation |
+| Open Kidney | Kidney ultrasound | [GitHub](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images) | [arXiv 2022](https://arxiv.org/abs/2206.06657) | Kidney segmentation and view labels | Multi-rater variability and defer-to-whom analysis |
+| MCE Dataset | Myocardial contrast echocardiography | [GitHub](https://github.com/dewenzeng/MCE_dataset) | [arXiv 2021](https://arxiv.org/abs/2106.15597) | Multi-rater myocardial segmentation | Expert variability and uncertainty-aware segmentation |
+| SonoRate | Fetal ultrasound AI evaluation | [GitHub](https://github.com/13204942/SonoRate) | [arXiv 2026](https://arxiv.org/abs/2606.19174) | Clinician-centered ranking workflow | Human preference and rater-subgroup evaluation |
+| OpenBiomedVid / MIMICEchoQA | Biomedical video and echocardiography QA | [arXiv](https://arxiv.org/abs/2504.14391) | [arXiv 2025](https://arxiv.org/abs/2504.14391) | Video-language and echo QA evaluation | Report/VQA/reasoning base signals without interaction logs |
+| K2MUSE | Rehabilitation ultrasound sensing | [Kaggle](https://www.kaggle.com/datasets/98d67c253a7c820668aed0690cae20343481b8f8f8e0dafbe93b0c76d91f0ce6) | [arXiv 2025](https://arxiv.org/abs/2504.14602) | A-mode ultrasound and locomotion time-series modeling | Process-rich ultrasound-adjacent data for L4-style temporal signals |
 
 ## Recent Ultrasound Models and Public Dataset Links
 
