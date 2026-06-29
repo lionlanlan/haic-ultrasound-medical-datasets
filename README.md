@@ -38,6 +38,18 @@ The matrix maps five HAIC levels to six common ultrasound task families. The col
 | Conditional | Support depends on dataset-specific temporal or process signals, such as scan sequences, probe states, intermediate edits, or interaction traces. |
 | New logs required | Core base signals require new prospective human-AI interaction logs. |
 
+## Support-Code Definition Diagrams
+
+The diagrams below show how each support code relates public datasets, derived base signals, user studies, and evaluation outputs. The key point is that a complete HAIC study can include a user study at any level, while the matrix code describes how the core base signals for the HAIC task are obtained.
+
+| Native task output | Protocol-derived support |
+|---|---|
+| ![Native support workflow](figures/support_native.png) | ![Protocol-derived support workflow](figures/support_protocol_derived.png) |
+
+| Conditional on process data | New interaction logs required |
+|---|---|
+| ![Conditional support workflow](figures/support_conditional.png) | ![New-log support workflow](figures/support_new_logs.png) |
+
 The main boundary is L4. L2 and L3 are mostly outcome-level simulations: model outputs can be compared with existing annotations to estimate correction burden or deferral behavior. L4 is process-level and requires states and actions across turns. L5 remains prospective because repeated-use adaptation cannot be recovered from static images or labels.
 
 ## Repository Contents
