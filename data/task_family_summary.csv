@@ -1,0 +1,7 @@
+﻿"task_family","paper_matrix_count","typical_base_signals","public_data_reuse","needs_new_data_for"
+"Recognition / classification","46","labels/classes","L1 model output; L2 review; L3 deferral with confidence","L4 scan/process feedback; L5 repeated-use logs"
+"Segmentation / localization","29","masks/boxes/landmarks","L1 masks; L2 editable proposals; L3 deferral by uncertainty; simulated L4 edits","real interaction logs for L4; longitudinal L5 logs"
+"Measurement / quantification","12","measurements/scores","L1 prediction; L2 measurement review; L3 selective handoff","turn-level measurement workflow; longitudinal use"
+"Quality / acquisition","18","quality labels/acquisition cues","L1 quality output; L2 review; L3 deferral; possible L4 guidance if process cues exist","probe motion, scan sequence, and repeated-use logs"
+"Report / VQA / reasoning","8","reports/QA/reasoning text","L1 text output; L2 review; L3 deferral with uncertainty","real dialogue, follow-up questions, and longitudinal behavior"
+"Reconstruction / registration","10","raw/reconstruction/registration targets","L1 output; L2 adjustment/review; L3 selective handoff","interactive transform states and repeated-use logs"
