@@ -13,11 +13,7 @@ The public guide is intentionally kept to two CSV tables.
 
 ## Background Sources
 
-The guide builds on public searches, challenge pages, benchmark papers, repositories, and prior ultrasound-resource surveys. A major seed source is:
-
-Alsharid M, Guo X, Men Q, Saha P, Mishra D, Ahuja R, Ouyang C, Noble JA. **On the public dissemination and open sourcing of ultrasound resources, datasets and deep learning models.** *npj Digital Medicine*, 2025. [Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC12722232/)
-
-That survey catalogued 72 public ultrasound datasets and 56 open-source ultrasound models. Our guide uses it as a resource-discovery starting point, then reorganizes public datasets by HAIC task family and by the base signals they can support.
+The guide builds on public searches, challenge pages, benchmark papers, repositories, and prior ultrasound-resource surveys. A recent *npj Digital Medicine* survey catalogued 72 public ultrasound datasets and 56 open-source ultrasound models. We use that survey as a resource-discovery starting point, then reorganize public datasets by HAIC task family and by the base signals they can support. [Survey link](https://pmc.ncbi.nlm.nih.gov/articles/PMC12722232/)
 
 ## Core Concepts
 
