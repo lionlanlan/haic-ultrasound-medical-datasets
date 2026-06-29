@@ -6,6 +6,8 @@ This repository is the online living guide accompanying our HAIC-oriented analys
 
 The guide organizes public ultrasound resources by task family, identifies which HAIC levels can be supported by existing or derivable dataset signals, and marks when new user studies or prospective interaction logs are unavoidable.
 
+It builds on prior public ultrasound resource surveys, especially the [Guo/Alsharid public ultrasound resource catalogue](https://pmc.ncbi.nlm.nih.gov/articles/PMC12722232/) of 72 datasets, and extends them with benchmark sources, recently added resources, and HAIC-oriented signal annotations.
+
 ## Core Idea
 
 We separate two kinds of signals.
