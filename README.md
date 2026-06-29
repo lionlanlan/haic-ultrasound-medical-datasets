@@ -31,12 +31,12 @@ The matrix maps five HAIC levels to six common ultrasound task families. The col
 
 ![HAIC task-readiness matrix](figures/haic_task_readiness_matrix.png)
 
-| Symbol | Meaning |
+| Matrix code | Meaning |
 |---|---|
-| ✓ | The original dataset already contains the base target needed for this level. |
-| ↻ | Proxy base signals can be derived through a reproducible protocol, such as model predictions, prediction-ground-truth differences, confidence scores, or deferral rules. |
-| ! | Support depends on dataset-specific temporal or process signals, such as scan sequences, probe states, intermediate edits, or interaction traces. |
-| - | Core base signals require new prospective human-AI interaction logs. |
+| Native | The original dataset already contains the base target needed for this level. |
+| Protocol-derived | Proxy base signals can be derived through a reproducible protocol, such as model predictions, prediction-ground-truth differences, confidence scores, or deferral rules. |
+| Conditional | Support depends on dataset-specific temporal or process signals, such as scan sequences, probe states, intermediate edits, or interaction traces. |
+| New logs required | Core base signals require new prospective human-AI interaction logs. |
 
 The main boundary is L4. L2 and L3 are mostly outcome-level simulations: model outputs can be compared with existing annotations to estimate correction burden or deferral behavior. L4 is process-level and requires states and actions across turns. L5 remains prospective because repeated-use adaptation cannot be recovered from static images or labels.
 
@@ -47,22 +47,39 @@ The main boundary is L4. L2 and L3 are mostly outcome-level simulations: model o
 | [`data/statistical_dataset_master.csv`](data/statistical_dataset_master.csv) | Expanded living-guide table used for task-family counts and dataset coverage. |
 | [`data/datasets.csv`](data/datasets.csv) | Curated working list with source links, papers, access notes, HAIC relevance, and limitations. |
 | [`data/haic_annotations_curated.csv`](data/haic_annotations_curated.csv) | Compact signal annotations for reviewed and candidate resources. |
-| [`docs/haic_task_taxonomy.md`](docs/haic_task_taxonomy.md) | Detailed explanation of task families, HAIC levels, and support symbols. |
+| [`docs/haic_task_taxonomy.md`](docs/haic_task_taxonomy.md) | Detailed explanation of task families, HAIC levels, and support codes. |
 | [`docs/field_definitions.md`](docs/field_definitions.md) | Column definitions and maintenance rules. |
 | [`docs/statistical_dataset_master.md`](docs/statistical_dataset_master.md) | Summary of the statistical master list. |
 
 ## Task-Family Dataset Index
 
-This table gives a clickable starting point for each task family. The full machine-readable table is [`data/statistical_dataset_master.csv`](data/statistical_dataset_master.csv).
+This table gives a clickable starting point for primary or near-primary public resources in each task family. Cross-task benchmark collections are listed separately below instead of being treated as one dataset inside a single task family.
 
 | Task family | Example public resources |
 |---|---|
-| Recognition / classification | [Fetal Planes DB](https://zenodo.org/record/3904280), [COVID-19 POCUS](https://github.com/jannisborn/covid19_ultrasound), [Open Kidney](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images), [U2-BENCH](https://huggingface.co/datasets/DolphinAI/u2-bench) |
-| Segmentation / localization | [CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/), [HC18](https://zenodo.org/records/1327317), [BUSI](https://scholar.cu.edu.eg/?q=afahmy/pages/dataset), [TN3K](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation), [MCE Dataset](https://github.com/dewenzeng/MCE_dataset), [Open Kidney](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images) |
+| Recognition / classification | [Fetal Planes DB](https://zenodo.org/record/3904280), [COVID-19 POCUS](https://github.com/jannisborn/covid19_ultrasound), [Open Kidney](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images), [Ultrasound Breast Images for Breast Cancer](https://www.kaggle.com/datasets/aryashah2k/ultrasound-breast-images-for-breast-cancer) |
+| Segmentation / localization | [CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/), [HC18](https://zenodo.org/records/1327317), [BUSI](https://scholar.cu.edu.eg/?q=afahmy/pages/dataset), [TN3K](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation) |
 | Measurement / quantification | [EchoNet-Dynamic](https://echonet.github.io/dynamic/), [CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/), [HC18](https://zenodo.org/records/1327317), [K2MUSE](https://www.kaggle.com/datasets/98d67c253a7c820668aed0690cae20343481b8f8f8e0dafbe93b0c76d91f0ce6) |
-| Quality / acquisition | [Fetal Planes DB](https://zenodo.org/record/3904280), [FPUS23](https://doi.org/10.5281/zenodo.10040903), [Open Kidney](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images), [K2MUSE](https://www.kaggle.com/datasets/98d67c253a7c820668aed0690cae20343481b8f8f8e0dafbe93b0c76d91f0ce6) |
-| Report / VQA / reasoning | [U2-BENCH](https://huggingface.co/datasets/DolphinAI/u2-bench), [OpenBiomedVid / MIMICEchoQA](https://arxiv.org/abs/2504.14391), [FPUS23](https://doi.org/10.5281/zenodo.10040903) |
+| Quality / acquisition | [Fetal Planes DB](https://zenodo.org/record/3904280), [FPUS23](https://doi.org/10.5281/zenodo.10040903), [African Fetal Standard Plane](https://doi.org/10.1038/s41598-023-29490-3), [K2MUSE](https://www.kaggle.com/datasets/98d67c253a7c820668aed0690cae20343481b8f8f8e0dafbe93b0c76d91f0ce6) |
+| Report / VQA / reasoning | Primary public ultrasound resources remain limited; see benchmark collections below. |
 | Reconstruction / registration | [PICMUS](https://www.creatis.insa-lyon.fr/Challenge/IEEE_IUS_2016/), [US simulation and segmentation](https://doi.org/10.1007/s11548-019-02046-5) |
+
+## Benchmark Collections
+
+Some resources are benchmark collections rather than single primary datasets. We keep them in the master table because they are useful for HAIC-oriented model evaluation, but we do not treat them as one dataset inside a single task family.
+
+- [U2-BENCH](https://huggingface.co/datasets/DolphinAI/u2-bench) is a derived ultrasound LVLM benchmark spanning multiple anatomy regions and task types. Its underlying source datasets are tracked separately in [`data/statistical_dataset_master.csv`](data/statistical_dataset_master.csv).
+- [OpenBiomedVid / MIMICEchoQA](https://arxiv.org/abs/2504.14391) is a video-language and echocardiography QA resource. It is useful for report/VQA/reasoning tasks, but it does not provide prospective human-AI interaction logs.
+
+## Multi-Rater and Rater-Evaluation Resources
+
+These resources are especially relevant to L3 selective collaboration because they expose expert variability, rater preference, or the question of which human should receive a deferred case.
+
+| Resource | Why it matters for HAIC |
+|---|---|
+| [Open Kidney](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images) | Provides kidney masks, view labels, and two expert sonographer annotation sets, making it useful for multi-rater variability and defer-to-whom analysis. |
+| [MCE Dataset](https://github.com/dewenzeng/MCE_dataset) | Provides myocardial contrast echocardiography frames with multiple cardiologist annotations, supporting disagreement-aware segmentation and uncertainty evaluation. |
+| [SonoRate](https://github.com/13204942/SonoRate) | Provides a clinician-centered ranking/evaluation workflow for ultrasound AI segmentation outputs, useful for rater-subgroup analysis and human preference signals. |
 
 ## How to Use This Guide
 
