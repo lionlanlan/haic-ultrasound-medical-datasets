@@ -11,10 +11,11 @@ Main one-row-per-resource table.
 - `anatomy_or_domain`: anatomy, clinical domain, or technical domain.
 - `task_or_scenario`: short description of the original task or use scenario.
 - `base_signal_type`: what kind of base signal the resource provides or can support, such as labels, masks, measurements, quality cues, language data, or reconstruction targets.
-- `source_basis`: where the row came from, such as the 72-dataset public ultrasound catalogue, U2-BENCH source list, or curated HAIC addition.
-- `dataset_url`: direct dataset, repository, challenge, or project link when available.
-- `evidence_url`: paper, DOI, arXiv page, benchmark page, or other evidence link.
-- `status`: current link/evidence status. Rows marked `needs_url_verification` or `candidate_needs_recheck` should be verified before recommendation.
+- `source_url`: public source used to justify the row and task-family annotation. This may be a dataset page, paper, benchmark source list, or secondary catalogue.
+- `source_type`: type of source used for `source_url`, such as `direct_resource`, `paper_or_evidence`, `benchmark_source_list`, `secondary_catalogue`, or `paper_only_not_public`.
+- `dataset_url`: direct dataset, repository, challenge, or project link when confirmed.
+- `evidence_url`: paper, DOI, arXiv page, benchmark page, or other evidence link when available.
+- `status`: current source status. Rows marked `secondary_catalogue_only`, `benchmark_source_only`, `evidence_source_only`, or `paper_only_not_public` should not be read as confirmed direct dataset-release links.
 
 ## `data/task_family_summary.csv`
 

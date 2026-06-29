@@ -8,7 +8,7 @@ This repository is the online living guide accompanying our HAIC-oriented analys
 
 The public guide is intentionally kept to two CSV tables.
 
-- [`data/living_guide.csv`](data/living_guide.csv): the main one-row-per-resource guide. It lists the resource name, task family, anatomy/domain, task description, base-signal type, source basis, links, and verification status.
+- [`data/living_guide.csv`](data/living_guide.csv): the main one-row-per-resource guide. It lists the resource name, task family, anatomy/domain, task description, base-signal type, source URL, source type, direct dataset link when confirmed, evidence link, and verification status.
 - [`data/task_family_summary.csv`](data/task_family_summary.csv): a compact task-family summary. It gives the paper-matrix counts, typical base signals, likely HAIC reuse path, and what new data are needed for higher-level studies.
 
 ## Background Sources
@@ -44,13 +44,14 @@ The main boundary is L4. L2 and L3 are mostly outcome-level simulations: model o
 ## How to Use This Guide
 
 1. Start from [`data/task_family_summary.csv`](data/task_family_summary.csv) to identify the task family and likely HAIC upgrade path.
-2. Use [`data/living_guide.csv`](data/living_guide.csv) to find candidate public resources and source links.
+2. Use [`data/living_guide.csv`](data/living_guide.csv) to find candidate public resources and trace each entry through `source_url`.
 3. Decide which base signals are already available, which can be derived by protocol, and which require new data collection.
 4. Design the user study separately to collect evaluation signals such as workload, correction time, trust, preference, reliance, and clinical usefulness.
 
 ## Notes
 
 - Benchmark collections such as U2-BENCH are useful for HAIC-oriented model evaluation, but they are not treated as single primary datasets inside one task family.
+- Every row includes `source_url`, the public source used to justify inclusion and task-family annotation. When a direct dataset page is not confirmed, `source_url` may point to a paper, benchmark source list, or secondary catalogue, with `status` marking the limitation.
 - Multi-rater or rater-evaluation resources such as Open Kidney, MCE, and SonoRate are useful for studying expert variability and selective deferral, but they remain scarce in ultrasound.
 - K2MUSE is included as an ultrasound-adjacent process-rich resource. It contains time-synchronized A-mode ultrasound and locomotion signals and should not be treated as a diagnostic B-mode ultrasound dataset.
 
