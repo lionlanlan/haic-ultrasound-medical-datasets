@@ -2,11 +2,11 @@
 
 This repository is the online living guide accompanying our HAIC-oriented analysis of public ultrasound datasets. It is not a general ultrasound-AI catalogue and it does not rank dataset quality. Its purpose is narrower:
 
-> Given a public ultrasound dataset, what kind of human-AI collaboration (HAIC) task can be constructed from the signals it records?
+> Given a public ultrasound dataset, what kind of human-AI collaboration (HAIC) task can be constructed from its available base signals?
 
-The guide organizes public ultrasound resources by task family, identifies which HAIC levels can be supported by existing or derivable dataset signals, and marks when new user studies or prospective interaction logs are unavoidable.
+The guide organizes public ultrasound resources by task family, identifies which HAIC levels can be supported by existing or derivable base signals, and marks when new user studies or prospective interaction logs are unavoidable.
 
-It builds on prior public ultrasound resource surveys, especially the [Guo/Alsharid public ultrasound resource catalogue](https://pmc.ncbi.nlm.nih.gov/articles/PMC12722232/) of 72 datasets, and extends them with benchmark sources, recently added resources, and HAIC-oriented signal annotations.
+It builds on prior public ultrasound resource surveys, especially a [72-dataset public ultrasound resource catalogue](https://pmc.ncbi.nlm.nih.gov/articles/PMC12722232/), and extends them with benchmark sources, recently added resources, and HAIC-oriented base-signal annotations.
 
 ## Core Idea
 
@@ -60,7 +60,7 @@ The main boundary is L4. L2 and L3 are mostly outcome-level simulations: model o
 |---|---|
 | [`data/statistical_dataset_master.csv`](data/statistical_dataset_master.csv) | Expanded living-guide table used for task-family counts and dataset coverage. |
 | [`data/datasets.csv`](data/datasets.csv) | Curated working list with source links, papers, access notes, HAIC relevance, and limitations. |
-| [`data/haic_annotations_curated.csv`](data/haic_annotations_curated.csv) | Compact signal annotations for reviewed and candidate resources. |
+| [`data/haic_annotations_curated.csv`](data/haic_annotations_curated.csv) | Compact base-signal annotations for reviewed and candidate resources. |
 | [`docs/haic_task_taxonomy.md`](docs/haic_task_taxonomy.md) | Detailed explanation of task families, HAIC levels, and support codes. |
 | [`docs/field_definitions.md`](docs/field_definitions.md) | Column definitions and maintenance rules. |
 | [`docs/statistical_dataset_master.md`](docs/statistical_dataset_master.md) | Summary of the statistical master list. |
@@ -93,7 +93,7 @@ These resources are especially relevant to L3 selective collaboration because th
 |---|---|
 | [Open Kidney](https://github.com/nikhilroxtomar/Ultrasound-Kidney-Images) | Provides kidney masks, view labels, and two expert sonographer annotation sets, making it useful for multi-rater variability and defer-to-whom analysis. |
 | [MCE Dataset](https://github.com/dewenzeng/MCE_dataset) | Provides myocardial contrast echocardiography frames with multiple cardiologist annotations, supporting disagreement-aware segmentation and uncertainty evaluation. |
-| [SonoRate](https://github.com/13204942/SonoRate) | Provides a clinician-centered ranking/evaluation workflow for ultrasound AI segmentation outputs, useful for rater-subgroup analysis and human preference signals. |
+| [SonoRate](https://github.com/13204942/SonoRate) | Provides a clinician-centered ranking/evaluation workflow for ultrasound AI segmentation outputs, useful for rater-subgroup analysis and evaluation signals such as human preference. |
 
 ## How to Use This Guide
 
@@ -111,7 +111,7 @@ K2MUSE is included as an ultrasound-adjacent process-rich resource because it co
 
 ## Contributing
 
-Please open an issue or pull request using [`.github/ISSUE_TEMPLATE/add_dataset.md`](.github/ISSUE_TEMPLATE/add_dataset.md). Useful contributions include stable dataset links, papers, access notes, task-family corrections, HAIC signal annotations, and limitations relevant to user studies.
+Please open an issue or pull request using [`.github/ISSUE_TEMPLATE/add_dataset.md`](.github/ISSUE_TEMPLATE/add_dataset.md). Useful contributions include stable dataset links, papers, access notes, task-family corrections, base-signal annotations, and limitations relevant to user studies.
 
 ## License
 

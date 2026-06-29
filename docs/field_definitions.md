@@ -1,6 +1,6 @@
 # Field Definitions
 
-The curated working table is maintained in `data/datasets.csv`. A compact signal annotation table for reviewed and candidate resources is maintained in `data/haic_annotations_curated.csv`. A broader seed table is maintained in `data/public_ultrasound_seed_npj2025.csv`.
+The curated working table is maintained in `data/datasets.csv`. A compact base-signal annotation table for reviewed and candidate resources is maintained in `data/haic_annotations_curated.csv`. A broader seed table is maintained in `data/public_ultrasound_seed_npj2025.csv`.
 
 For the task-level framework used in the paper, see [`haic_task_taxonomy.md`](haic_task_taxonomy.md). Older `haic_signal_level` entries are retained as compact resource annotations, but the current guide distinguishes **base signals** from **evaluation signals**.
 
@@ -43,7 +43,7 @@ The seed table is intentionally broader than the curated working list. It record
 
 ## HAIC Annotation Table
 
-`data/haic_annotations_curated.csv` contains compact signal annotations for reviewed resources from the curated working list. Candidate resources can still appear when they are useful for HAIC mapping but need access, license, or scope verification. The annotation table is intentionally separate from `data/datasets.csv` so that dataset links and descriptive notes can evolve without hiding the evidence logic used for HAIC mapping.
+`data/haic_annotations_curated.csv` contains compact base-signal annotations for reviewed resources from the curated working list. Candidate resources can still appear when they are useful for HAIC mapping but need access, license, or scope verification. The annotation table is intentionally separate from `data/datasets.csv` so that dataset links and descriptive notes can evolve without hiding the evidence logic used for HAIC mapping.
 
 In `data/datasets.csv`, source links are named `public_source_url` and `paper_or_usage_url`. In the HAIC annotation table, the same information is copied as `dataset_url` and `paper_url` so readers can review the annotation evidence without switching tables.
 
@@ -75,7 +75,7 @@ When a seed entry is promoted into the curated working table, maintainers should
 | `clinical_domain` | Clinical or technical domain. |
 | `task` | Main task(s), such as segmentation, classification, measurement, VQA, report generation, quality assessment, reconstruction, or registration. |
 | `data_type` | Publicly documented data types. |
-| `haic_signal_level` | Compact signal label from L0 to L5, used as a resource tag rather than a complete HAIC evaluation claim. |
+| `haic_signal_level` | Compact base-signal label from L0 to L5, used as a resource tag rather than a complete HAIC evaluation claim. |
 | `haic_use_case` | Maintainer-inferred HAIC use case supported by the documented signal. |
 | `haic_evidence_url` | Public source used to justify the HAIC annotation. |
 | `last_checked` | Date when access and evidence were last checked. |

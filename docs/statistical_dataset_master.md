@@ -4,19 +4,19 @@ This table is intended as a statistical pool for the HAIC workshop paper, not as
 
 Sources merged:
 
-- Guo/Alsharid public ultrasound seed list: 72 datasets.
-- U2-BENCH source datasets: underlying sources listed in the U2-BENCH appendix/task summary, deduplicated against the Guo seed list where names match.
+- Prior public ultrasound resource catalogue: 72 datasets.
+- U2-BENCH source datasets: underlying sources listed in the U2-BENCH appendix/task summary, deduplicated against the 72-dataset survey seed list where names match.
 - Current curated-guide extras: datasets already maintained in this repository but not found in the two source pools above.
 
 Summary as updated on 2026-06-29:
 
 | Count | Value |
 |---|---:|
-| Primary statistical pool: Guo72 + U2-BENCH non-duplicates | 81 |
+| Primary statistical pool: 72-dataset survey + U2-BENCH non-duplicates | 81 |
 | Total unique rows in master list | 96 |
-| Rows from Guo72 seed list | 72 |
+| Rows from 72-dataset survey seed list | 72 |
 | Rows appearing in U2-BENCH source list | 36 |
-| Overlap between Guo72 and U2-BENCH sources | 27 |
+| Overlap between 72-dataset survey and U2-BENCH sources | 27 |
 | U2-BENCH-only source rows | 9 |
 | Current curated-guide extras | 15 |
 | Rows with verified/evidence links | 48 |
@@ -31,7 +31,7 @@ Important interpretation notes:
 - `dataset_url` is preferred for dataset/project access. `paper_or_evidence_url` may be a paper, DOI, arXiv page, or benchmark evidence link when a direct dataset URL is not yet verified.
 - `needs_url_verification` means the item can be included in coverage statistics, but should not yet be presented as a ready-to-use dataset recommendation.
 - `candidate_needs_recheck` means a URL exists in the curated guide, but the resource is still marked as candidate or unstable and should be rechecked before recommendation.
-- `SonoDQS` comes from the Guo/Alsharid seed catalogue and describes documentation/reporting quality, not HAIC readiness.
+- `SonoDQS` comes from the prior 72-dataset public ultrasound catalogue and describes documentation/reporting quality, not HAIC readiness.
 
 CSV file: [../data/statistical_dataset_master.csv](../data/statistical_dataset_master.csv).
 

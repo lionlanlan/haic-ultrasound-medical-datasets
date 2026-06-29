@@ -38,10 +38,10 @@ The matrix classifies base-signal availability. It does not claim that user stud
 
 | Code | Meaning |
 |---|---|
-| ✓ | The original dataset already contains the base target needed for this task family and level. |
-| ↻ | Proxy base signals can be derived by an explicit, reproducible protocol, usually by adding model outputs, prediction-ground-truth differences, confidence scores, or deferral rules. |
-| ! | Support depends on dataset-specific temporal or process signals, such as scan sequences, probe states, intermediate edits, or interaction traces. |
-| - | The core base signals require new prospective human-AI interaction logs. |
+| Native | The original dataset already contains the base target needed for this task family and level. |
+| Protocol-derived | Proxy base signals can be derived by an explicit, reproducible protocol, usually by adding model outputs, prediction-ground-truth differences, confidence scores, or deferral rules. |
+| Conditional | Support depends on dataset-specific temporal or process signals, such as scan sequences, probe states, intermediate edits, or interaction traces. |
+| New logs required | The core base signals require new prospective human-AI interaction logs. |
 
 The main boundary is L4. L2 and L3 are mostly outcome-level simulations: a model output can be compared with existing annotations to estimate correction burden or deferral behavior. L4 is process-level: it requires states and actions across turns. Quality/acquisition datasets are the exception because their native targets may already describe scan quality, standard-plane status, or probe guidance, which can serve as intermediate feedback during acquisition. L5 remains prospective because repeated-use adaptation cannot be recovered from static images or labels.
 
