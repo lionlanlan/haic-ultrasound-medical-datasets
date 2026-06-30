@@ -22,6 +22,12 @@ The guide builds on public searches, challenge pages, benchmark papers, reposito
 
 Public datasets can often provide or derive base signals for lower-level HAIC tasks, but they do not replace user studies for evaluating real workload, trust, handoff behavior, or clinical benefit.
 
+## Signal Collection Difficulty
+
+The pyramid summarizes why the five HAIC levels are ordered by base-signal availability. L1 uses existing labels or targets; L2 and L3 can often be constructed with model outputs, prediction-ground-truth differences, uncertainty scores, and deferral protocols; L4 requires process or interaction logs; and L5 requires prospective longitudinal records. Evaluation signals such as preference, time, workload, trust, and accept/override behavior can be collected at any level by user study, but they are not implied by dataset readiness.
+
+![HAIC signal collection difficulty](figures/haic_signal_collection_difficulty.png)
+
 ## Readiness Matrix
 
 The matrix maps five HAIC levels to six ultrasound task families. The same task-family counts are listed in [`data/task_family_summary.csv`](data/task_family_summary.csv).
